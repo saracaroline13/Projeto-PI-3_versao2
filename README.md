@@ -1,6 +1,6 @@
 # Projeto_PI_3
 
-Grupo Projeto Integrador
+# SEXTETO SECRETO
 
 Sara Caroline
 
