@@ -3,17 +3,18 @@
 # SEXTETO SECRETO
 
 # Tema: 
+         Artigos Esportivos
 
 # Integrantes:
 
-Sara Caroline
+         Sara Caroline
 
-Matheus Caetano
+         Matheus Caetano
 
-Denys Roger
+         Denys Roger
 
-Alexandre Marcopoulos
+         Alexandre Marcopoulos
+ 
+         Gabriel Rodrigues
 
-Gabriel Rodrigues
-
-Lucas Gonçalves
+         Lucas Gonçalves
