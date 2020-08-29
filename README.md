@@ -2,9 +2,9 @@
 
 # SEXTETO SECRETO
 
-#Tema: 
+# Tema: 
 
-#Integrantes:
+# Integrantes:
 
 Sara Caroline
 
