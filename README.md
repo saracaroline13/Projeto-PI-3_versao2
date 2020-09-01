@@ -11,8 +11,6 @@
 
          Matheus Caetano
 
-         Denys Roger
-
          Alexandre Marcopoulos
  
          Gabriel Rodrigues
