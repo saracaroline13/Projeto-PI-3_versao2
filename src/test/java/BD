@@ -27,3 +27,5 @@ rua varchar(60) not null,
 bairro varchar(60) not null,
 cep char(9) not null,
 cidade varchar(35) not null);
+
+BD!
