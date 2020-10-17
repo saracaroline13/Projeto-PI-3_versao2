@@ -5,10 +5,8 @@
  */
 package br.pi3.sp.servlet;
 
-import br.pi3.sp.dao.FuncionarioDAO;
-import br.pi3.sp.utils.Utils;
+import br.pi3.sp.dao.ProdutoDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,15 +19,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Matheus
  */
-public class ExcluirFuncionario extends HttpServlet {
-
+public class ExcluirProduto extends HttpServlet {
+  
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("idFuncionario"));
+        int id = Integer.parseInt(request.getParameter("idProduto"));
         try {
-            FuncionarioDAO.deleteFuncionario(id);
+            ProdutoDAO.deleteProduto(id);
             response.getWriter().print(true);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ExcluirFuncionario.class.getName()).log(Level.SEVERE, null, ex);

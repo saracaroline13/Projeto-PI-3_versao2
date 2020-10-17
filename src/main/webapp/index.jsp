@@ -10,12 +10,16 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Menu</title>
     </head>
     <body>
         <h1>Gestão de Funcionarios</h1>
         <a href="cadastrarFuncionario.jsp">Novo Funcionario</a><br/>
         <a href="ListarFuncionarios">Listar Funcionarios</a><br/>
+        
+        <h1>Gestão de Produtos</h1>
+        <a href="cadastrarProduto.jsp">Novo Produto</a><br/>
+        <a href="ListarProdutos">Listar Produtos</a><br/>
         
          <%-- 
     Document   : index

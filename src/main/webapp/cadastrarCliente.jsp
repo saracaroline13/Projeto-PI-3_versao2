@@ -13,22 +13,6 @@
         
         <title>Cadastrar Cliente</title>
         
-        <style>
-            body {
-                background-color: #A19D9D;
-               }
-               
-            p {
-               color: white;   
-               font: "Microsoft YaHei";
-            }
-            
-            button {
-                color: #525351;
-            }
-            
-               
-        </style>
         
     </head>
     <body>

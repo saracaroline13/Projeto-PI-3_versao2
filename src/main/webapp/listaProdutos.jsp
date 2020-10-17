@@ -1,7 +1,7 @@
 <%-- 
-    Document   : listaClientes
-    Created on : 14/10/2020, 22:34:54
-    Author     : Sara
+    Document   : listaProdutos
+    Created on : 16/10/2020, 22:11:46
+    Author     : Matheus
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,19 +11,19 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Produtos</title>
         
         <script lang="text/javasript">
-          function mostrarModalExclusao(id, nome){
+          function mostrarModalExclusao(id, produto){
              
-              $("#nomeCliente").html(nome);
-               $("#idCliente").val(id);
+              $("#nomeProduto").html(produto);
+               $("#idProduto").val(id);
               $("#modalExclusao").modal('show');
           }
           
-          function excluirCliente(){
-              var id = $("#idCliente").val();
-               $.get( "ExcluirCliente?idCliente="+id, function( resposta ) {
+          function excluirProduto(){
+              var id = $("#idProduto").val();
+               $.get( "ExcluirProduto?idProduto="+id, function( resposta ) {
                     $('#modalExclusao').modal('hide');
                     if (resposta === "true") {
                         
@@ -34,42 +34,36 @@
                     window.location.reload();
                 });
           }
+                
         </script>  
-        
+         
+         
     </head>
     <body>
-        
-        <h1>Lista de Clientes</h1>
+        <h1>Lista de Funcionarios</h1>
         <table class="table">
             <thead class="thead-light">
-            <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Cpf</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Email</th>
-            <th scope="col">Celular</th>
-            <th scope="col">Rua</th>
-            <th scope="col">Bairro</th>
-            <th scope="col">Cep</th>
-            <th scope="col">Cidade</th>
+            <th scope="col">Código</th>
+            <th scope="col">Produto</th>
+            <th scope="col">Categoria</th>
+             <th scope="col">Tamanho</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Qtd em Estoque</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </thead>
         <tbody>
-            <c:forEach var="cliente" items="${listaClientes}">
+            <c:forEach var="produto" items="${listaProdutos}">
                 <tr>
-                    <td>${cliente.id}</td> 
-                    <td>${cliente.nome}</td>
-                    <td>${cliente.cpf}</td> 
-                    <td>${cliente.sexo}</td>  
-                    <td>${cliente.email}</td> 
-                    <td>${cliente.celular}</td> 
-                    <td>${cliente.rua}</td> 
-                    <td>${cliente.bairro}</td> 
-                    <td>${cliente.cep}</td> 
-                    <td>${cliente.cidade}</td> 
-                    <td><a href="AlterarCliente?id=${cliente.id}">Alterar</a></td> 
-                    <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${cliente.id},' ${cliente.nome}')">Excluir</button></td>
+                    <td>${produto.id}</td> 
+                    <td>${produto.produto}</td> 
+                    <td>${produto.categoria}</td>
+                    <td>${produto.tamanho}</td>
+                    <td>${produto.valor}</td> 
+                    <td>${produto.estoque}</td> 
+                   
+                    <td><a href="AlterarProduto?id=${produto.id}">Alterar</a></td> 
+                    <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${produto.id},' ${produto.produto}')">Excluir</button></td>
                      
                 </tr>
                 
@@ -88,13 +82,13 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    Confirmar exclusão do Cliente  <label id="nomeCliente"></label> ?
-                    <input id="idCliente" hidden/>
+                    Confirmar exclusão do Produto  <label id="nomeProduto"></label> ?
+                    <input id="idProduto" hidden/>
                  
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary" onclick="excluirCliente()">Confirmar</button>
+                  <button type="button" class="btn btn-primary" onclick="excluirProduto()">Confirmar</button>
                 </div>
               </div>
             </div>
@@ -105,6 +99,6 @@
         
         </br>
         <a href="index.jsp">MENU</a>
-        
     </body>
 </html>
+

@@ -5,11 +5,10 @@
  */
 package br.pi3.sp.servlet;
 
-import br.pi3.sp.dao.FuncionarioDAO;
-import br.pi3.sp.entidade.Funcionario;
+
+import br.pi3.sp.dao.ProdutoDAO;
+import br.pi3.sp.entidade.Produto;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,17 +20,20 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Matheus
  */
-public class ListarFuncionarios extends HttpServlet {
+public class ListarProdutos extends HttpServlet {
 
-
-    @Override
+    
+        
+        @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)//requeste que vem do menu
             throws ServletException, IOException {
-        List<Funcionario> listaFuncionarios = FuncionarioDAO.getFuncionarios();
-        request.setAttribute("listaFuncionarios", listaFuncionarios);//adicionei no request um atributo a mais que a o select que vem alista de clientes do banco
+        List<Produto> listaProdutos = ProdutoDAO.getProdutos();
+        request.setAttribute("listaProdutos", listaProdutos);//adicionei no request um atributo a mais que a o select que vem alista de clientes do banco
         
-        RequestDispatcher requestDispatcher = getServletContext(). getRequestDispatcher("/listaFuncionarios.jsp");// redirecono a lista para a lista de Funcionarios
+        RequestDispatcher requestDispatcher = getServletContext(). getRequestDispatcher("/listaProdutos.jsp");// redirecono a lista para a lista de Funcionarios
         requestDispatcher.forward(request, response);
     }
+    }
+       
 
-}
+
