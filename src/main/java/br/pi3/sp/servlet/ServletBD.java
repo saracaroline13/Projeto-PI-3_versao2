@@ -6,7 +6,9 @@
 package br.pi3.sp.servlet;
 
 import br.pi3.sp.conexaobd.ConexaoBD;
+import br.pi3.sp.dao.ClienteDAO;
 import br.pi3.sp.dao.FuncionarioDAO;
+import br.pi3.sp.entidade.Cliente;
 import br.pi3.sp.entidade.Funcionario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -52,6 +54,11 @@ public class ServletBD extends HttpServlet {
            
             List<Funcionario> lista = FuncionarioDAO.getFuncionarios();
             for(Funcionario funcionario:lista){
+                out.println(funcionario);
+            }
+            
+            List<Cliente> lista1 = ClienteDAO.getClientes();
+            for(Cliente funcionario:lista1){
                 out.println(funcionario);
             }
             

@@ -16,5 +16,16 @@
         <h1>Gestão de Funcionarios</h1>
         <a href="cadastrarFuncionario.jsp">Novo Funcionario</a><br/>
         <a href="ListarFuncionarios">Listar Funcionarios</a><br/>
+        
+         <%-- 
+    Document   : index
+    Created on : 14/10/2020, 22:54:10
+    Author     : Sara
+--%>
+
+        <h1>Gestão de Clientes</h1>
+        <a href="cadastrarCliente.jsp">Novo Cliente</a><br/>
+        <a href="ListarClientes">Listar Clientes</a><br/>
+        
     </body>
 </html>
