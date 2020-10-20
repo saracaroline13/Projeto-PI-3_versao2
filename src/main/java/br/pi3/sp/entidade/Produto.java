@@ -20,22 +20,26 @@ public class Produto {
     private String categoria;
     private String tamanho;
     private double valor;
+    private String filial;
     private int estoque;
     
-    public Produto(int id, String produto, String categoria, String tamanho, double valor, int estoque) {
+    
+    public Produto(int id, String produto, String categoria, String tamanho, double valor, String filial, int estoque) {
         this.id = id;
         this.produto = produto;
         this.categoria = categoria;
         this.tamanho = tamanho;
         this.valor = valor;
+        this.filial = filial;
         this.estoque = estoque;
     }
 
-    public Produto(String produto, String categoria, String tamanho, double valor, int estoque) {
+    public Produto(String produto, String categoria, String tamanho, double valor,String filial, int estoque) {
         this.produto = produto;
         this.categoria = categoria;
         this.tamanho = tamanho;
         this.valor = valor;
+        this.filial = filial;
         this.estoque = estoque;
     }
 

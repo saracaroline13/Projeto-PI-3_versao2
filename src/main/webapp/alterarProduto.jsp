@@ -28,8 +28,8 @@
             
             <p>Categoria do Produto</p>
               <select id="categorias" name="categoria">
-              <option value="Camisas">Calçados</option>
-              <option value="1">Roupas</option>
+              <option value="Calçados">Calçados</option>
+              <option value="Roupas">Roupas</option>
               <option value="Equipamentos">Equipamentos</option>
               </select></br>
               
@@ -39,6 +39,9 @@
             
             <p>Valor</p>
             <input name="valor" value="${produto.valor}" class="form-control" required="true"/></br>
+            
+            <p>Filial</p>
+            <input name="filial" value="${produto.filial}" class="form-control" readonly="true"/></br>
             
             <p>Adicionar Estoque</p>
             <input name="estoque" value="0" class="form-control" required="true"/></br>

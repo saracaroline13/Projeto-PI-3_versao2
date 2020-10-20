@@ -20,7 +20,7 @@
             <input name="id" value="${funcionario.id}" readonly="true" />
             
             <p>Filial</p>
-            <input name="filial" value="${funcionario.filial}" class="form-control" required="true"/>
+            <input name="filial" value="${funcionario.filial}" class="form-control" readonly="true"/>
             <p>Nome</p>
             <input name ="nome" value="${funcionario.nome}" class="form-control" required="true"/>
             <p>CPF</p>

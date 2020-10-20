@@ -48,6 +48,7 @@
             <th scope="col">Categoria</th>
              <th scope="col">Tamanho</th>
             <th scope="col">Valor</th>
+            <th scope="col">Filial</th>
             <th scope="col">Qtd em Estoque</th>
             <th scope="col"></th>
             <th scope="col"></th>
@@ -60,6 +61,7 @@
                     <td>${produto.categoria}</td>
                     <td>${produto.tamanho}</td>
                     <td>${produto.valor}</td> 
+                    <td>${produto.filial}</td>
                     <td>${produto.estoque}</td> 
                    
                     <td><a href="AlterarProduto?id=${produto.id}">Alterar</a></td> 

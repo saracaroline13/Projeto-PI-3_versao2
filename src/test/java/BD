@@ -34,5 +34,6 @@ produto varchar(100) not null,
 categoria varchar(50) not null,
 tamanho char(7),
 valor double not null,
+filial varchar (30) not null,
 estoque int not null
 );

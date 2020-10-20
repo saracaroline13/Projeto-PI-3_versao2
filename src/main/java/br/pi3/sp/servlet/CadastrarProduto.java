@@ -32,9 +32,10 @@ public class CadastrarProduto extends HttpServlet {
         String tamanho = request.getParameter("tamanho");
         double valor =Double.parseDouble(request.getParameter("valor")) ;
         int estoque = Integer.parseInt(request.getParameter("estoque"));
+        String filial = request.getParameter("filial");
          
         
-        Produto produto = new Produto(nome, categoria, tamanho, valor, estoque);
+        Produto produto = new Produto(nome, categoria, tamanho, valor, filial, estoque);
                 try {
             ProdutoDAO.addProduto(produto);
             response.sendRedirect("sucesso.jsp");

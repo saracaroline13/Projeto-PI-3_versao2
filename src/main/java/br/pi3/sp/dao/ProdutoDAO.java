@@ -36,10 +36,11 @@ public class ProdutoDAO {
                 String categoria = rs.getString("categoria");
                 String tamanho = rs.getString("tamanho");
                 Double valor = rs.getDouble("valor");
+                String filial = rs.getString("filial");
                 int estoque = rs.getInt("estoque");
                 
                 
-                listaProdutos.add(new Produto(id, produto, categoria, tamanho, valor, estoque)) ;   
+                listaProdutos.add(new Produto(id, produto, categoria, tamanho, valor, filial, estoque)) ;   
             }
 
         } catch (ClassNotFoundException ex) {
@@ -52,14 +53,15 @@ public class ProdutoDAO {
     
     public static  void addProduto(Produto produto) throws SQLException, ClassNotFoundException{
         Connection con = ConexaoBD.getConexao();
-        String query = "INSERT INTO ROOT.PRODUTOS (PRODUTO, CATEGORIA,TAMANHO, VALOR, ESTOQUE) \n" +
-"	VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO ROOT.PRODUTOS (PRODUTO, CATEGORIA,TAMANHO, VALOR, FILIAL, ESTOQUE) \n" +
+"	VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(query);
         ps.setString(1, produto.getProduto());
         ps.setString(2, produto.getCategoria());
         ps.setString(3, produto.getTamanho());
         ps.setDouble(4, produto.getValor());
-        ps.setInt(5, produto.getEstoque());
+        ps.setString(5, produto.getFilial());
+        ps.setInt(6, produto.getEstoque());
         
         
         ps.execute();
@@ -79,8 +81,9 @@ public class ProdutoDAO {
                 String categoria = rs.getString("categoria");
                 String tamanho = rs.getString("tamanho");
                 double valor = rs.getDouble("valor");
-                int estoque = rs.getInt("id");
-                produto = new Produto(id, produton, categoria, tamanho, valor, estoque);
+                String filial = rs.getString("filial");
+                int estoque = rs.getInt("estoque");
+                produto = new Produto(id, produton, categoria, tamanho, valor, filial, estoque);
                  }
 
         } catch (ClassNotFoundException ex) {
@@ -93,14 +96,15 @@ public class ProdutoDAO {
     
     public static void updateProduto(Produto produto) throws SQLException, ClassNotFoundException{
         Connection con = ConexaoBD.getConexao();
-        String query = "update produtos set PRODUTO= ? , CATEGORIA= ?, TAMANHO= ?, VALOR= ?, ESTOQUE= ESTOQUE+ ? WHERE ID= ?";
+        String query = "update produtos set PRODUTO= ? , CATEGORIA= ?, TAMANHO= ?, VALOR= ?, FILIAL= ?, ESTOQUE= ESTOQUE+ ? WHERE ID= ?";
         PreparedStatement ps = con.prepareStatement(query);
         ps.setString(1, produto.getProduto());
         ps.setString(2, produto.getCategoria());
         ps.setString(3, produto.getTamanho());
         ps.setDouble(4, produto.getValor());
-        ps.setInt(5, produto.getEstoque());
-        ps.setInt(6, produto.getId());
+        ps.setString(5, produto.getFilial());
+        ps.setInt(6, produto.getEstoque());
+        ps.setInt(7, produto.getId());
         ps.execute();
     }
     

@@ -44,6 +44,7 @@ public class AlterarProduto extends HttpServlet {
         String categoria = request.getParameter("categoria");
         String tamanho = request.getParameter("tamanho");
         double valor = Double.parseDouble(request.getParameter("valor"));
+        String filial = request.getParameter("filial");
         int estoque = Integer.parseInt(request.getParameter("estoque"));
         
         Produto produto = ProdutoDAO.getProdutosId(id);
@@ -52,6 +53,7 @@ public class AlterarProduto extends HttpServlet {
         produto.setCategoria(categoria);
         produto.setTamanho(tamanho);
         produto.setValor(valor);
+        produto.setFilial(filial);
         produto.setEstoque(estoque);
         
         try {

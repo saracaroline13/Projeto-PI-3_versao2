@@ -20,7 +20,7 @@
             
               <p>Categoria do Produto</p>
               <select name="categoria">
-              <option value="Camisas">Calçados</option>
+              <option value="Calçados">Calçados</option>
               <option value="Roupas">Roupas</option>
               <option value="Equipamentos">Equipamentos</option>
               </select></br>
@@ -30,6 +30,14 @@
               
               <p>Preço</p>
               <input name ="valor" class="form-control" required="true"/></br>
+              
+              <p>Categoria do Produto</p>
+              <select name="filial">
+              <option value="Shop_SportsSP_1">Shop_SportsSP_1</option>
+              <option value="Shop_SportsSP_2">Shop_SportsSP_2</option>
+              <option value="Shop_SportsSP_3">Shop_SportsSP_3</option>
+              <option value="Shop_SportsRJ_1">Shop_SportsRJ_1</option>
+              </select></br>
               
               <p>Quantidade em Estoque</p>
               <input name="estoque" class="form-control" required="true"/></br>
