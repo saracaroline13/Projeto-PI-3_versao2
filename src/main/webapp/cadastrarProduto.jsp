@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar Produto</title>
     </head>
-    <body>
+    <body class="container">
         <h1>Cadastro de Produto</h1>
         <form action="CadastrarProduto" method="POST">
             <p>Nome do Produto</p>

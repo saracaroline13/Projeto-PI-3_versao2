@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar Funcionario</title>
     </head>
-    <body>
+    <body class="container">
         <h1>Cadastro</h1>
         
         <form action="CadastrarFuncionario" method="POST">

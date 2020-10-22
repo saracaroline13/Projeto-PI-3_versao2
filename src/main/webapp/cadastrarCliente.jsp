@@ -15,7 +15,7 @@
         
         
     </head>
-    <body>
+    <body class="container">
         <h1>Cadastro</h1>
         
         <form action="CadastrarCliente" method="POST">
