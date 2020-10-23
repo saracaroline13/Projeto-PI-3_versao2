@@ -1,0 +1,112 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/10/2020, 22:34:05
+    Author     : Lucas
+*/
+
+body {
+    background-color: #3c3d38;
+    font-family: 'Monstserrat', sans-serif;
+    color: #929292;
+}
+
+a {
+    text-decoration: none;
+    color: #929292;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+header {
+    text-align: center;
+
+    width: 90%;
+    height: auto;
+
+    padding: 10px 0;
+    margin-left: 5%;
+
+    border-bottom: 0.2em solid black;
+}
+
+header img {
+    margin: 1%;
+    height: 5em;
+}
+
+main {
+    padding: 30px 5%;
+}
+
+.sessoes h1 {
+    margin-left: 50%;
+    text-align: left;
+
+    font-size: 2em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+section {
+    border: 0.2em double black;
+
+    margin-bottom: 1%;
+    margin-left: 50%;
+    padding: 2%;
+
+    width: 50%;
+
+    text-align: center;
+}
+
+.sessoes {
+    background: url(../imagens/chutando-a-bola-grande.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    height: auto;
+}
+
+.sessoes backgroun {
+    width: 100%;
+}
+
+.sessoes-gestao {
+    padding: 7% 3% 7% 0;
+}
+
+.titulo-gestao {
+    font-size: 1.8em;
+    text-decoration: bold;
+
+    background-color: #3c3d38;
+    width: 100%;
+}
+
+.link-gestao {
+    font-size: 1.3em;
+}
+
+footer {
+    margin: 1% 0 0 5%;
+    padding-top: 10px;
+
+    height: 40px;
+    width: 90%;
+
+    text-align: center;
+    font-size: 0.8em;
+
+    border-top: 0.2em solid black;
+}

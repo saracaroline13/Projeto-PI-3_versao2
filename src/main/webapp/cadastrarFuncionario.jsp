@@ -10,9 +10,17 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/style.css" rel="stylesheet">
         <title>Cadastrar Funcionario</title>
     </head>
-    <body class="container">
+    <body>
+        <header>
+            <a href="index.jsp">
+                <img src="imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" />
+            </a>
+        </header>
+        
+        <main class="container">
         <h1>Cadastro</h1>
         
         <form action="CadastrarFuncionario" method="POST">
@@ -51,5 +59,9 @@
             <input name="cidade" class="form-control" required="true"/></br>
             
             <button type="submit" class="btn btn-primary">Concluir</button>
+        </main>
+        <footer>
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+        </footer>
     </body>
 </html>

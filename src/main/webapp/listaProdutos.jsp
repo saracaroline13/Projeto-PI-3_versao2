@@ -11,6 +11,7 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/style.css" rel="stylesheet">
         <title>Produtos</title>
         
         <script lang="text/javasript">
@@ -36,71 +37,82 @@
           }
                 
         </script>  
-         
-         
     </head>
+    
     <body>
-        <h1>Lista de Funcionarios</h1>
-        <table class="table">
-            <thead class="thead-light">
-            <th scope="col">Código</th>
-            <th scope="col">Produto</th>
-            <th scope="col">Categoria</th>
-             <th scope="col">Tamanho</th>
-            <th scope="col">Valor</th>
-            <th scope="col">Filial</th>
-            <th scope="col">Qtd em Estoque</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-        </thead>
-        <tbody>
-            <c:forEach var="produto" items="${listaProdutos}">
-                <tr>
-                    <td>${produto.id}</td> 
-                    <td>${produto.produto}</td> 
-                    <td>${produto.categoria}</td>
-                    <td>${produto.tamanho}</td>
-                    <td>${produto.valor}</td> 
-                    <td>${produto.filial}</td>
-                    <td>${produto.estoque}</td> 
-                   
-                    <td><a href="AlterarProduto?id=${produto.id}">Alterar</a></td> 
-                    <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${produto.id},' ${produto.produto}')">Excluir</button></td>
-                     
-                </tr>
-                
-            </c:forEach>
-            
-            
-        </tbody>
-    </table>
- <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Confirmar Exclusão</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    Confirmar exclusão do Produto  <label id="nomeProduto"></label> ?
-                    <input id="idProduto" hidden/>
-                 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary" onclick="excluirProduto()">Confirmar</button>
+        <header>
+            <a href="index.jsp">
+                <img src="imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" />
+            </a>
+        </header>
+        
+        <main class="container">
+            <h1>Lista de Funcionarios</h1>
+            <table class="table">
+                <thead class="thead-light">
+                <th scope="col">Código</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Categoria</th>
+                 <th scope="col">Tamanho</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Filial</th>
+                <th scope="col">Qtd em Estoque</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </thead>
+            <tbody>
+                <c:forEach var="produto" items="${listaProdutos}">
+                    <tr>
+                        <td>${produto.id}</td> 
+                        <td>${produto.produto}</td> 
+                        <td>${produto.categoria}</td>
+                        <td>${produto.tamanho}</td>
+                        <td>${produto.valor}</td> 
+                        <td>${produto.filial}</td>
+                        <td>${produto.estoque}</td> 
+
+                        <td><a href="AlterarProduto?id=${produto.id}">Alterar</a></td> 
+                        <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${produto.id},' ${produto.produto}')">Excluir</button></td>
+
+                    </tr>
+
+                </c:forEach>
+
+
+            </tbody>
+        </table>
+     <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirmar Exclusão</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        Confirmar exclusão do Produto  <label id="nomeProduto"></label> ?
+                        <input id="idProduto" hidden/>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-primary" onclick="excluirProduto()">Confirmar</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
 
+
+
+            </br>
+            <a href="index.jsp">MENU</a>
+        </main>
         
-        
-        </br>
-        <a href="index.jsp">MENU</a>
+        <footer>
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+        </footer>
     </body>
 </html>
 

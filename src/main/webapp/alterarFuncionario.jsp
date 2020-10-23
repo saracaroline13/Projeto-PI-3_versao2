@@ -10,9 +10,17 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/style.css" rel="stylesheet">
         <title>Atualização de Funcionario</title>
     </head>
     <body>
+        <header>
+            <a href="index.jsp">
+                <img src="imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" />
+            </a>
+        </header>
+        
+        <main class="container">
         <h1>Alteração de Cadastro do Funcionario: ${funcionario.nome}</h1>
         </br>
         <form action="AlterarFuncionario" method="POST">
@@ -49,6 +57,9 @@
             <input name="cidade" value="${funcionario.cidade}" class="form-control" required="true"/></br>
             
             <button type="submit">Concluir</button>
-    </body>
+            </main>
+        <footer>
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+        </footer>
     </body>
 </html>
