@@ -12,6 +12,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet">
         <title>Cadastrar Funcionario</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     </head>
     <body>
         <header>
@@ -34,11 +39,11 @@
             <p>Nome</p>
             <input name ="nome" class="form-control" required="true"/></br>
             <p>CPF</p>
-            <input name ="cpf" class="form-control" required="true"/></br>
+            <input name ="cpf" minlength="11" maxlength="11" class="form-control" required="true"/></br>
             <p>Sexo</p>
             <input name="sexo" class="form-control" required="true"/></br>
             <p>Data Nascimento</p>
-            <input name="data_nasc" class="form-control" required="true"/></br>
+            <input name="data_nasc" id="data" class="form-control" onkeypress="$(this).mask('00/00/0000');" required="true"/></br>
             <p>Estado Civil</p>
             <input name="estado_civil" class="form-control" required="true"/></br>
             <p> Cargo</p>
@@ -46,15 +51,15 @@
             <p> Salario</p>
             <input name="salario" class="form-control" required="true"/></br>
             <p>E-mail</p>
-            <input name="email" class="form-control" required="true"/></br>
+            <input name="email" minlength="9" maxlength="14" class="form-control" required="true"/></br>
             <p>Celular</p>
-            <input name="contato" class="form-control" required="true"/></br>
+            <input name="contato" class="form-control" onkeypress="$(this).mask('(00)00000-0000');" required="true"/></br>
             <p>Rua</p>
             <input name="rua" class="form-control" required="true"/></br>
             <p>Bairro</p>
             <input name="bairro" class="form-control" required="true"/></br>
             <p>CEP</p>
-            <input name="cep" class="form-control" required="true"/></br>
+            <input name="cep" class="form-control" onkeypress="$(this).mask('00000-000');" required="true"/></br>
             <p>Cidade</p>
             <input name="cidade" class="form-control" required="true"/></br>
             

@@ -12,6 +12,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet">
         <title>Cadastrar Cliente</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     
     <body>
@@ -34,13 +38,13 @@
                 <p>E-mail</p>
                     <input name="email" class="form-control" required="true"/></br>
                 <p>Celular</p>
-                    <input name="celular" class="form-control" required="true"/></br>
+                    <input name="celular" class="form-control" onkeypress="$(this).mask('(00)00000-0000');" required="true"/></br>
                 <p>Rua</p>
                     <input name="rua" class="form-control" required="true"/></br>
                 <p>Bairro</p>
                     <input name="bairro" class="form-control" required="true"/></br>
                 <p>CEP</p>
-                    <input name="cep" class="form-control" required="true"/></br>
+                    <input name="cep" class="form-control" onkeypress="$(this).mask('00000-000');" required="true"/></br>
                 <p>Cidade</p>
                     <input name="cidade" class="form-control" required="true"/></br>
 

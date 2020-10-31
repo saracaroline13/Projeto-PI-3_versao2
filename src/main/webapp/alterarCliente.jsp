@@ -11,6 +11,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <title>Atualização de Cliente</title>
     </head>
     <body>
@@ -35,13 +39,13 @@
                 <p>E-mail</p>
                     <input name="email" value="${cliente.email}" class="form-control" required="true"/>
                 <p>Celular</p>
-                    <input name="celular" value="${cliente.celular}" class="form-control" required="true"/>
+                    <input name="celular" value="${cliente.celular}" class="form-control" onkeypress="$(this).mask('(00)00000-0000');" required="true"/>
                 <p>Rua</p>
                     <input name="rua" value="${cliente.rua}" class="form-control" required="true"/>
                 <p>Bairro</p>
                     <input name="bairro" value="${cliente.bairro}" class="form-control" required="true"/>
                 <p>CEP</p>
-                    <input name="cep" value="${cliente.cep}" class="form-control" required="true"/>
+                    <input name="cep" value="${cliente.cep}" class="form-control" onkeypress="$(this).mask('00000-000');" required="true"/>
                 <p>Cidade</p>
                     <input name="cidade" value="${cliente.cidade}" class="form-control" required="true"/></br>
 

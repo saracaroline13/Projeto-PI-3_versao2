@@ -11,6 +11,7 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <link href="css/style.css" rel="stylesheet">
         <title>JSP Page</title>
         
@@ -48,7 +49,7 @@
         
         <main class="container">
             <h1>Lista de Funcionarios</h1>
-            <table class="table">
+            <table id="tbFuncionarios" class="table">
                 <thead class="thead-light">
                     <th scope="col">Matricula</th>
                     <th scope="col">Filial</th>
@@ -92,6 +93,7 @@
                     </c:forEach>
                 </tbody>
             </table>
+            
             <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">

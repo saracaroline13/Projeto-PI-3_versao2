@@ -11,6 +11,7 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <link href="css/style.css" rel="stylesheet">
         <title>JSP Page</title>
         
@@ -48,7 +49,7 @@
         
         <main class="container">
             <h1>Lista de Clientes</h1>
-            <table class="table">
+            <table id="tbclientes"class="table">
                 <thead class="thead-light">
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
@@ -86,6 +87,7 @@
 
             </tbody>
         </table>
+           
      <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">

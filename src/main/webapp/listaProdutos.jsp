@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet">
+        
         <title>Produtos</title>
         
         <script lang="text/javasript">
@@ -25,7 +26,7 @@
           function excluirProduto(){
               var id = $("#idProduto").val();
                $.get( "ExcluirProduto?idProduto="+id, function( resposta ) {
-                    $('#modalExclusao').modal('hide');
+                    $('#modalExclusao').modal('show');
                     if (resposta === "true") {
                         
                         console.log("Excluido!");
@@ -47,8 +48,8 @@
         </header>
         
         <main class="container">
-            <h1>Lista de Funcionarios</h1>
-            <table class="table">
+            <h1>Lista de Produtos</h1>
+            <table id = "tbprodutos" class="table">
                 <thead class="thead-light">
                 <th scope="col">Código</th>
                 <th scope="col">Produto</th>
@@ -81,7 +82,7 @@
 
             </tbody>
         </table>
-     <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -104,9 +105,6 @@
               </div>
 
 
-
-
-            </br>
             <a href="index.jsp">MENU</a>
         </main>
         

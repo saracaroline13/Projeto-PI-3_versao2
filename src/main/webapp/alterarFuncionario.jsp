@@ -12,6 +12,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet">
         <title>Atualização de Funcionario</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body>
         <header>
@@ -36,7 +40,7 @@
             <p>Sexo</p>
             <input name="sexo" value="${funcionario.sexo}" class="form-control" required="true"/>
             <p>Data Nascimento</p>
-            <input name="data_nasc" value="${funcionario.data_nasc}" class="form-control" required="true"/>
+            <input name="data_nasc" value="${funcionario.data_nasc}" onkeypress="$(this).mask('00/00/0000');" class="form-control" required="true"/>
             <p>Estado Civil</p>
             <input name="estado_civil" value="${funcionario.estado_civil}" class="form-control" required="true"/>
             <p> Cargo</p>
@@ -46,13 +50,13 @@
             <p>E-mail</p>
             <input name="email" value="${funcionario.email}" class="form-control" required="true"/>
             <p>Celular</p>
-            <input name="contato" value="${funcionario.contato}" class="form-control" required="true"/>
+            <input name="contato" value="${funcionario.contato}" onkeypress="$(this).mask('(00)00000-0000');" class="form-control" required="true"/>
             <p>Rua</p>
             <input name="rua" value="${funcionario.rua}" class="form-control" required="true"/>
             <p>Bairro</p>
             <input name="bairro" value="${funcionario.bairro}" class="form-control" required="true"/>
             <p>CEP</p>
-            <input name="cep" value="${funcionario.cep}" class="form-control" required="true"/>
+            <input name="cep" value="${funcionario.cep}" onkeypress="$(this).mask('00000-000');" class="form-control" required="true"/>
             <p>Cidade</p>
             <input name="cidade" value="${funcionario.cidade}" class="form-control" required="true"/></br>
             
