@@ -5,7 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html lang="pt_BR">
     <head>
@@ -18,23 +18,23 @@
     <body>
         
         
-        <h1><center>Formul√°rio de Vendas</center></h1></br>
+        <h1><center>Formul·rio de Vendas</center></h1></br>
         
         <form action="FinalizarVenda" method="POST" class="container">
             
-            <input type="date" name="data_venda" ></br>
-            <label for="idfuncionario">Matricula Funcion√°rio</label>
-            <input type="text" name="idfuncionario">
-            <label for="filial" name="Filial">Filial</label>
-            <select class="filial">
-                <option value="1">ShopSports_SP_1</option>
-                <option value="1">ShopSports_SP_2</option>
-                <option value="1">ShopSports_RJ_1</option>
-                <option value="1">ShopSports_RJ_2</option>
-            </select></br>
+            <input name="data_venda" id="data" onkeypress="$(this).mask('00/00/0000');" required="true"/></br>
+            <label for="id_funcionario">Matricula Funcion·rio</label>
+            <input type="text" name="id_funcionario">
+                  Filial
+                  <select name="filial">
+                  <option value="Shop_SportsSP_1">Shop_SportsSP_1</option>
+                  <option value="Shop_SportsSP_2">Shop_SportsSP_2</option>
+                  <option value="Shop_SportsSP_3">Shop_SportsSP_3</option>
+                  <option value="Shop_SportsRJ_1">Shop_SportsRJ_1</option>
+                  </select></br>
 
             <label for="cliente">CPF Cliente</label>
-            <input type="cpfcliente" name="cpfcliente" maxlength="11"></br>
+            <input type="cpf_cliente" name="cpf_cliente" maxlength="11"></br>
            
             
 
@@ -77,9 +77,9 @@
                                 $(document).ready(function () {
                                     $('#tbproduto').DataTable({
                                         "language": {
-                                            "lengthMenu": "Mostrando _MENU_ registros por p√°gina",
+                                            "lengthMenu": "Mostrando _MENU_ registros por p·gina",
                                             "zeroRecords": "Nada encontrado",
-                                            "info": "Mostrando p√°gina _PAGE_ de _PAGES_",
+                                            "info": "Mostrando p·gina _PAGE_ de _PAGES_",
                                             "infoEmpty": "Nada Encontrado",
                                             "infoFiltered": "(filtrado de _MAX_ registros no total)"
                                         }
@@ -108,14 +108,14 @@
 
             <section class="pagamento">
                 <h2>Pagamento</h2></br>
-                <input type="radio" name="tipopagamento"/>Dinheiro </br>
-                <input type="radio" name="tipopagamento"/>Cart√£o de D√©bito </br>
-                <input type="radio" name="tipopagamento"/>Cart√£o de Cr√©dito </br>
-                <input type="radio" name="tipopagamento"/>Cart√£o Presente </br>
+                <input type="radio" name="tipopagamento" value="Dinheiro"/>Dinheiro </br>
+                <input type="radio" name="tipopagamento" value="Cart„o de DÈbito"/>Cart„o de DÈbito </br>
+                <input type="radio" name="tipopagamento" value="Cart„o de CrÈdito"/>Cart„o de CrÈdito </br>
+                <input type="radio" name="tipopagamento" value="Cart„o Presente"/>Cart„o Presente </br>
             </section></br>
             
             <!--<label>Desconto: </h3><input type="text"/>-->
-            <p align="left"><label>Total Compra:</label><b>R$</><b id="totaldacompra" name="tipo_pagamento">0</b></p>
+            <p align="left"><label>Total Compra:</label><b>R$</b><b id="totaldacompra" name="tipo_pagamento">0</b></p>
 
             <section class="finalizar">
                 <button type="submit" class="btn btn-success">Finalizar</button>
@@ -133,14 +133,14 @@
                 if (estoque == 0) {
                     alert("Produto sem estoque suficiente");
                 } else {
-                    tb = document.getElementById("tbCarrinho");//armazena a tabela que ir√° adicionar o produto do cliente
+                    tb = document.getElementById("tbCarrinho");//armazena a tabela que ir· adicionar o produto do cliente
                     var qtdLinhas = tb.rows.length;//quantidade linhas                    
 
 
                     let produtos = $('.produto--id');
                     let produtoIndice = 0;
 
-                    //forEach(armazena um item do array por vez, o √≠ndice desse item no array)
+                    //forEach(armazena um item do array por vez, o Ìndice desse item no array)
                     produtos.toArray().forEach((item, indice) => {//selecionar o produto correto de acordo com o ID e armazenar o indice dele
                         let idItemAtual = $(item).text();
                         if (+idItemAtual === +id) {//verifica quando o indice de dentro do array que contem o valor da tag == indice passado
@@ -166,7 +166,7 @@
                         });
 
                         if (indiceCarrinho == null) {
-                            var linha = tb.insertRow(qtdLinhas);//adiciona em baixo de onde n√£o tem linha
+                            var linha = tb.insertRow(qtdLinhas);//adiciona em baixo de onde n„o tem linha
                             var cellCodigo = linha.insertCell(0);
                             var cellProduto = linha.insertCell(1);
                             var cellTamanho = linha.insertCell(2);
@@ -221,13 +221,13 @@
                 //parentNode -> Seleciona o pai do objeto passado
                 //children -> Seleciona todos os filhos, gerando um vetor
                 //debugger;
-                // Capturamos a refer√™ncia da TR (linha) pai do objeto
+                // Capturamos a referÍncia da TR (linha) pai do objeto
                 var objTR = obj.parentNode.parentNode;
-                // Capturamos a refer√™ncia da TABLE (tabela) pai da linha
+                // Capturamos a referÍncia da TABLE (tabela) pai da linha
                 var objTable = objTR.parentNode;
-                // Capturamos o √≠ndice da linha
+                // Capturamos o Ìndice da linha
                 var indexTR = objTR.rowIndex;
-                // Chamamos o m√©todo de remo√ß√£o de linha nativo do JavaScript, passando como par√¢metro o √≠ndice da linha  
+                // Chamamos o mÈtodo de remoÁ„o de linha nativo do JavaScript, passando como par‚metro o Ìndice da linha  
 
                 let id = +$(objTR.children[0]).text();
                 let quantidadeCarrinho = $('.carrinho--produto-quantidade')[indexTR - 1];

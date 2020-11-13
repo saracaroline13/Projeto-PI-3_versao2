@@ -4,7 +4,7 @@
     Author     : Sara
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <%@include file = "header.jsp" %>
@@ -15,7 +15,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <title>AtualizaÃ§Ã£o de Cliente</title>
+        <title>Atualização de Cliente</title>
     </head>
     <body>
         <header>
@@ -25,7 +25,7 @@
         </header>
         
         <main class="container">
-            <h1>AlteraÃ§Ã£o de Cadastro do Cliente: ${cliente.nome}</h1>
+            <h1>Alteração de Cadastro do Cliente: ${cliente.nome}</h1>
             </br>
             <form action="AlterarCliente" method="POST">
                 <p>Matricula</p>
@@ -53,7 +53,7 @@
         </main>
                 
         <footer>
-            Â© 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
     </body>
 </html>

@@ -11,7 +11,7 @@
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <title>JSP Page</title>
         
@@ -87,7 +87,25 @@
 
             </tbody>
         </table>
-           
+            
+            <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+             <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+                <script>
+                $(document).ready(function(){
+                    $('#tbclientes').DataTable({
+                              "language": {
+                              "lengthMenu": "Mostrando _MENU_ registros por página",
+                              "zeroRecords": "Nada encontrado",
+                              "info": "Mostrando página _PAGE_ de _PAGES_",
+                              "infoEmpty": "Nenhum registro disponível",
+                              "infoFiltered": "(filtrado de _MAX_ registros no total)"
+                          }
+                      });
+                });
+                </script>
+                
+                
      <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">

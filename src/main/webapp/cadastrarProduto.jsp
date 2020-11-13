@@ -32,7 +32,7 @@
                   <option value="Calçados">Calçados</option>
                   <option value="Roupas">Roupas</option>
                   <option value="Equipamentos">Equipamentos</option>
-                  </select></br>
+              </select></br>
 
                   <p>Tamanho</p>
                   <input name="tamanho" class="form-control" required="true"/></br>
@@ -40,7 +40,7 @@
                   <p>Preço</p>
                   <input name ="valor" class="form-control" required="true"/></br>
 
-                  <p>Categoria do Produto</p>
+                  <p>Filial</p>
                   <select name="filial">
                   <option value="Shop_SportsSP_1">Shop_SportsSP_1</option>
                   <option value="Shop_SportsSP_2">Shop_SportsSP_2</option>

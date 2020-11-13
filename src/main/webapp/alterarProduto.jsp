@@ -4,14 +4,14 @@
     Author     : Matheus
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <%@include file = "header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet">
-        <title>AtualizaÃ§Ã£o de Produto</title>
+        <title>Atualização de Produto</title>
     </head>
     
     <body>
@@ -22,10 +22,10 @@
         </header>
         
         <main class="container">
-            <h1>AlteraÃ§Ã£o de Produto: ${produto.produto}</h1>
+            <h1>Alteração de Produto: ${produto.produto}</h1>
             </br>
             <form action="AlterarProduto" method="POST">
-                <p>CÃ³digo do Produto</p>
+                <p>Código do Produto</p>
                 <input name="id" value="${produto.id}" readonly="true" /></br>
 
                <p>Produto</p>
@@ -35,7 +35,7 @@
 
                <p>Categoria do Produto</p>
                  <select id="categorias" name="categoria">
-                 <option value="CalÃ§ados">CalÃ§ados</option>
+                 <option value="Calçados">Calçados</option>
                  <option value="Roupas">Roupas</option>
                  <option value="Equipamentos">Equipamentos</option>
                  </select></br>
@@ -58,7 +58,7 @@
         </main>
                
         <footer>
-            Â© 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
     </body>
 </html>

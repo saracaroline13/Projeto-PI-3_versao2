@@ -4,7 +4,7 @@
     Author     : Matheus
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <%@include file = "header.jsp" %>
@@ -66,7 +66,7 @@
             <button type="submit" class="btn btn-primary">Concluir</button>
         </main>
         <footer>
-            Â© 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
     </body>
 </html>

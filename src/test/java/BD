@@ -37,3 +37,14 @@ valor double not null,
 filial varchar (30) not null,
 estoque int not null
 );
+
+create table vendas(
+id_venda int not null unique GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+filial varchar(22) not null,
+id_funcionario int not null,
+cpf_cliente char(11) not null,
+data_venda varchar(10) not null,
+tipo_pagemento varchar(20) not null,
+total_venda double not null,
+foreign key (id_funcionario) references funcionarios (id),
+foreign key (cpf_cliente) references clientes (cpf));
