@@ -72,6 +72,10 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>br.pi3.sp.servlet.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FinalizarVenda</servlet-name>
+        <servlet-class>br.pi3.sp.servlet.FinalizarVenda</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBD</servlet-name>
         <url-pattern>/ServletBD</url-pattern>
@@ -135,6 +139,10 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FinalizarVenda</servlet-name>
+        <url-pattern>/FinalizarVenda</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
