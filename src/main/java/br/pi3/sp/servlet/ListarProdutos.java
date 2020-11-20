@@ -30,7 +30,8 @@ public class ListarProdutos extends HttpServlet {
         List<Produto> listaProdutos = ProdutoDAO.getProdutos();
         request.setAttribute("listaProdutos", listaProdutos);//adicionei no request um atributo a mais que a o select que vem alista de clientes do banco
         
-        RequestDispatcher requestDispatcher = getServletContext(). getRequestDispatcher("/listaProdutos.jsp");// redirecono a lista para a lista de Funcionarios
+        RequestDispatcher requestDispatcher = getServletContext()
+                .getRequestDispatcher("/protegido/listaProdutos.jsp");// redirecono a lista para a lista de Funcionarios
         requestDispatcher.forward(request, response);
     }
     }

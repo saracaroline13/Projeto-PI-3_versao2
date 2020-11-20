@@ -45,16 +45,16 @@ main {
     padding: 30px 5%;
 }
 
-.sessoes h1 {
-    margin-left: 50%;
+.titulo{
+    margin-left: 68%;
     text-align: left;
 
     font-size: 2em;
 }
 
-h1 {
-    text-align: center;
-    font-size: 2em;
+
+.sessoes {
+    background: no-repeat bottom center scroll;
 }
 
 section {
@@ -69,14 +69,22 @@ section {
     text-align: center;
 }
 
-.sessoes {
+.teste {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    text-align: center;
+    color: white;
     background: url(../imagens/chutando-a-bola-grande.jpg) no-repeat;
-    background-position: center;
+    background-position: 30% 45%;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
     background-size: cover;
-
-    width: 100%;
-    height: auto;
+    -o-background-size: cover;
 }
+    
 
 .sessoes backgroun {
     width: 100%;

@@ -30,7 +30,8 @@ public class ListarFuncionarios extends HttpServlet {
         List<Funcionario> listaFuncionarios = FuncionarioDAO.getFuncionarios();
         request.setAttribute("listaFuncionarios", listaFuncionarios);//adicionei no request um atributo a mais que a o select que vem alista de clientes do banco
         
-        RequestDispatcher requestDispatcher = getServletContext(). getRequestDispatcher("/listaFuncionarios.jsp");// redirecono a lista para a lista de Funcionarios
+        RequestDispatcher requestDispatcher = getServletContext()
+                .getRequestDispatcher("/protegido/listaFuncionarios.jsp");// redirecono a lista para a lista de Funcionarios
         requestDispatcher.forward(request, response);
     }
 

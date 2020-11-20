@@ -31,7 +31,8 @@ public class AlterarFuncionario extends HttpServlet {
         int id   = Integer.parseInt(request.getParameter("id"));
         Funcionario funcionario = FuncionarioDAO.getFuncionariosId(id);
         request.setAttribute("funcionario", funcionario);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/alterarFuncionario.jsp");
+        RequestDispatcher rd = getServletContext()
+                .getRequestDispatcher("/protegido/alterarFuncionario.jsp");
         rd.forward(request, response);
     }
 

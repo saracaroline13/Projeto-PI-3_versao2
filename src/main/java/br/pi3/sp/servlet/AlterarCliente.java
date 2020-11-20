@@ -31,7 +31,8 @@ public class AlterarCliente extends HttpServlet {
         int id   = Integer.parseInt(request.getParameter("id"));
         Cliente cliente = ClienteDAO.getClientesId(id);
         request.setAttribute("cliente", cliente);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/alterarCliente.jsp");
+        RequestDispatcher rd = getServletContext()
+                .getRequestDispatcher("/protegido/alterarCliente.jsp");
         rd.forward(request, response);
     }
 

@@ -28,7 +28,10 @@ public class ListarClientes extends HttpServlet {
         List<Cliente> listaClientes = ClienteDAO.getClientes();
         request.setAttribute("listaClientes", listaClientes);//adicionei no request um atributo a mais que a o select que vem alista de clientes do banco
         
-        RequestDispatcher requestDispatcher = getServletContext(). getRequestDispatcher("/listaClientes.jsp");// redirecono a lista para a lista de Clientes
+        
+        RequestDispatcher requestDispatcher = getServletContext()
+                .getRequestDispatcher("/protegido/listaClientes.jsp");// redirecono a lista para a lista de Clientes
+        
         requestDispatcher.forward(request, response);
     }
 
