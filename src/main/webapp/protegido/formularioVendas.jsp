@@ -236,7 +236,7 @@
                     }
                     //
                     function adicionaritemnasessao(id){
-                        $.get("CarrinhoServlet?id="+id"&data", function( resposta){
+                        $.get("CarrinhoServlet?id="+id, function( resposta){
                            console.log("OK"); 
                         });
                     }

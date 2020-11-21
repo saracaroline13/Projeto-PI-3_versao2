@@ -6,6 +6,7 @@
 package br.pi3.sp.dao;
 
 import br.pi3.sp.conexaobd.ConexaoBD;
+import br.pi3.sp.entidade.Produto;
 import br.pi3.sp.entidade.Venda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,6 +28,17 @@ public class VendaDAO {
         ps.setString(4, venda.getData_venda());
         ps.setString(5, venda.getTipo_pagamento());
         ps.setFloat(6, venda.getTotal_venda());
+        
+        ps.execute();
+    }
+    
+    public static void cadastraritensvenda(Produto produto,String data_venda) throws ClassNotFoundException, SQLException{
+        Connection con = ConexaoBD.getConexao();
+        String query = "INSERT INTO itens_vendas (id_produto, id_data) VALUES (?,?)";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setInt(1, produto.getId());
+        ps.setString (2, data_venda);
+        
         
         ps.execute();
     }
