@@ -20,15 +20,6 @@
         <br>
         <h1 class="login">LOGIN</h1>
         
-        <c:if test="${param.erro != null}">
-            
-            <div class="alert alert-danger" role="alert">
-            Usuário/Senha inválidos
-            </div>
-            
-        </c:if>
-        
-        
         <a class="usuario"> Usuário </a><br/>
          <a class="senha"> Senha </a>
          
@@ -44,6 +35,15 @@
         </div>
             <br>
         <button type="submit" class="btn btn-primary">ENTRAR</button>
+        
+        
+        <c:if test="${param.erro != null}">
+            
+            <div class="alert alert-danger" role="alert">
+            Usuário/Senha inválidos
+            </div>
+            
+        </c:if>
         
         </form>
         
