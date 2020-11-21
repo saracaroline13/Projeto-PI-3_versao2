@@ -59,7 +59,7 @@
                             
                         </c:if>
                         
-                        <a href="<c:url value="/ListarClientes.jsp"/>" class="link-gestao">Listar Clientes</a><br/>
+                        <a href="<c:url value="/ListarClientes"/>" class="link-gestao">Listar Clientes</a><br/>
                         
                     </section>
 

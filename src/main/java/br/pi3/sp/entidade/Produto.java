@@ -43,6 +43,20 @@ public class Produto {
         this.estoque = estoque;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        }
+        if(obj == null){
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (this.id != other.id){
+            return false;
+        }
+        return true;
+    }
    
     
     

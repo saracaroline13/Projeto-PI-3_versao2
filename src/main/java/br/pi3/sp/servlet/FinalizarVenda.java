@@ -42,7 +42,7 @@ public class FinalizarVenda extends HttpServlet {
         int id_funcionario=Integer.parseInt(request.getParameter("id_funcionario"));
         String cpf_cliente=request.getParameter("cpf_cliente");
         String tipo_pagamento= request.getParameter("tipopagamento");
-        float total_venda= Float.parseFloat(request.getParameter("tipo_pagamento"));
+        float total_venda= 0;//valor que deverá vir de um input com o total da venda!
        
         Venda venda = new Venda(filial, data_venda, id_funcionario, cpf_cliente, tipo_pagamento, total_venda);
         

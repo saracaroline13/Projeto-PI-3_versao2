@@ -19,7 +19,7 @@ public class VendaDAO {
     
     public static void finalizarVenda(Venda venda) throws ClassNotFoundException, SQLException{
         Connection con = ConexaoBD.getConexao();
-        String query = "INSERT INTO vendas (filial, id_funcionario, cpf_cliente, data_venda, tipo_pagamento, total_venda) VALUES (?,?,?,?,?,?)";
+        String query = "INSERT INTO vendas (filial, id_funcionario, cpf_cliente, data_venda, tipo_pagemento, total_venda) VALUES (?,?,?,?,?,?)";
         PreparedStatement ps = con.prepareStatement(query);
         ps.setString(1, venda.getFilial());
         ps.setInt   (2, venda.getId_funcionario());

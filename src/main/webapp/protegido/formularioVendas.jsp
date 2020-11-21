@@ -17,26 +17,25 @@
     </head>
     <body>
         
-        
-        <h1><center>Formulário de Vendas</center></h1></br>
+         <h1><center>Formulário de Vendas</center></h1></br>
         
         <form action="FinalizarVenda" method="POST" class="container">
             
-            <input type="date" name="data_venda" ></br>
-            <label for="idfuncionario">Matricula Funcionário</label>
-            <input type="text" name="idfuncionario">
-            <label for="filial" name="Filial">Filial</label>
-            <select class="filial">
-                <option value="1">ShopSports_SP_1</option>
-                <option value="1">ShopSports_SP_2</option>
-                <option value="1">ShopSports_RJ_1</option>
-                <option value="1">ShopSports_RJ_2</option>
-            </select></br>
+            <input name="data_venda" id="data" onkeypress="$(this).mask('00/00/0000');" required="true"/></br>
+            <label for="id_funcionario" required="true">Matricula Funcionário</label>
+            <input type="text" name="id_funcionario" required="true">
+                  Filial
+                  <select name="filial">
+                  <option value="Shop_SportsSP_1">Shop_SportsSP_1</option>
+                  <option value="Shop_SportsSP_2">Shop_SportsSP_2</option>
+                  <option value="Shop_SportsSP_3">Shop_SportsSP_3</option>
+                  <option value="Shop_SportsRJ_1">Shop_SportsRJ_1</option>
+                  </select></br>
 
             <label for="cliente">CPF Cliente</label>
-            <input type="cpfcliente" name="cpfcliente" maxlength="11"></br>
-           
-            
+            <input type="cpf_cliente" name="cpf_cliente" maxlength="11"></br>
+        
+       
 
             <h2>Produtos</h2>
             <table id="tbproduto" class="table table-bordered table-hover">
@@ -129,10 +128,31 @@
 
         <script lang="text/javascript">
             var tb;
-            function addCarrinho(id, produto, tamanho, valor, estoque, obj) {
-                if (estoque == 0) {
+            
+            function addCarrinho(id, produto, tamanho, valor, obj) {
+                //identificar a quantidade
+                tb = document.getElementById("tbCarrinho");//armazena a tabela que irá adicionar o produto do cliente
+                    var qtdLinhas = tb.rows.length;//quantidade linhas                    
+
+
+                    let produtos = $('.produto--id');
+                    let produtoIndice = 0;
+
+                    //forEach(armazena um item do array por vez, o índice desse item no array)
+                    produtos.toArray().forEach((item, indice) => {//selecionar o produto correto de acordo com o ID e armazenar o indice dele
+                        let idItemAtual = $(item).text();
+                        if (+idItemAtual === +id) {//verifica quando o indice de dentro do array que contem o valor da tag == indice passado
+                            produtoIndice = indice;//armazenando o indice
+                        }
+                    });
+
+                    //document.querySelectorAll('produto--estoque')  == $('.produto--estoque')  => Retorna um Array/Lista
+                    let tagEstoque = $('.produto--estoque')[produtoIndice];//pegar a quantidade de estoque do produto correto
+                //
+                if ($(tagEstoque).text() <= 0) {
                     alert("Produto sem estoque suficiente");
-                } else {
+                } 
+                else {
                     tb = document.getElementById("tbCarrinho");//armazena a tabela que irá adicionar o produto do cliente
                     var qtdLinhas = tb.rows.length;//quantidade linhas                    
 
@@ -214,8 +234,18 @@
                             
                         }
                     }
+                    //
+                    function adicionaritemnasessao(id){
+                        $.get("CarrinhoServlet?id="+id"&data", function( resposta){
+                           console.log("OK"); 
+                        });
+                    }
+                    //
+                    adicionaritemnasessao(id)
                 }
+                
             }
+            
             function removerLinha(obj) {
 
                 //parentNode -> Seleciona o pai do objeto passado
@@ -278,10 +308,18 @@
                 let tagEstoque = $('.produto--estoque')[produtoindex];//pegar a quantidade de estoque do produto correto                
                 $(tagEstoque).text(+$(tagEstoque).text() + 1);//if ternario   
 
+                 //
+                    function retiraritemnasessao(currentId){
+                        $.get("CarrinhoServletMinus?currentId="+currentId, function( resposta){
+                           console.log("retiradoo"); 
+                        });
+                    }
+                    //
+                    retiraritemnasessao(id)
             }
             
-
-
+           
+            
         </script>
         
         
