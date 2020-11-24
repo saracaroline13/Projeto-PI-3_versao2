@@ -21,9 +21,9 @@ public class Venda {
     private int id_funcionario;
     private String cpf_cliente;
     private String tipo_pagamento;
-    private float total_venda;
+    private double total_venda;
 
-    public Venda(String filial, String data_venda, int id_funcionario, String cpf_cliente, String tipo_pagamento, float total_venda) {
+    public Venda(String filial, String data_venda, int id_funcionario, String cpf_cliente, String tipo_pagamento,double total_venda) {
         this.filial = filial;
         this.data_venda = data_venda;
         this.id_funcionario = id_funcionario;

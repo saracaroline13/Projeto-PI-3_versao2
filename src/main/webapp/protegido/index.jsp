@@ -90,6 +90,15 @@
                         <a href="<c:url value="/ListarVendas"/>" class="link-gestao">Realizar Venda</a><br/>
                         
                     </section>
+                        
+                        <section>
+                            <p class="titulo-gestao">Relatórios</p>
+                            <c:if test="${sessionScope.usuario.gerente}">
+                            
+                            <a href="<c:url value="/cadastrarProduto.jsp"/>" class="link-gestao">Gerar Relatório</a><br/>
+                            
+                        </c:if>
+                        </section>
                     
                 </div>
             </div>

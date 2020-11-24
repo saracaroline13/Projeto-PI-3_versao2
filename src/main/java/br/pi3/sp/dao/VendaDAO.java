@@ -10,7 +10,10 @@ import br.pi3.sp.entidade.Produto;
 import br.pi3.sp.entidade.Venda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
 
 /**
  *
@@ -18,29 +21,45 @@ import java.sql.SQLException;
  */
 public class VendaDAO {
     
-    public static void finalizarVenda(Venda venda) throws ClassNotFoundException, SQLException{
+    public static int finalizarVenda(Venda venda) throws ClassNotFoundException, SQLException{
         Connection con = ConexaoBD.getConexao();
         String query = "INSERT INTO vendas (filial, id_funcionario, cpf_cliente, data_venda, tipo_pagemento, total_venda) VALUES (?,?,?,?,?,?)";
-        PreparedStatement ps = con.prepareStatement(query);
+        PreparedStatement ps = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
         ps.setString(1, venda.getFilial());
         ps.setInt   (2, venda.getId_funcionario());
         ps.setString(3, venda.getCpf_cliente());
         ps.setString(4, venda.getData_venda());
         ps.setString(5, venda.getTipo_pagamento());
-        ps.setFloat(6, venda.getTotal_venda());
+        ps.setDouble(6, venda.getTotal_venda());
         
         ps.execute();
+        ResultSet rs = ps.getGeneratedKeys();
+		int id = 0;
+		if(rs.next()){
+			id = rs.getInt(1);
+		}		
+        return id;
     }
     
-    public static void cadastraritensvenda(Produto produto,String data_venda) throws ClassNotFoundException, SQLException{
+    public static void cadastraritensvenda(int id_venda,List<Produto> listaProdutos,String data_venda) throws ClassNotFoundException, SQLException{
         Connection con = ConexaoBD.getConexao();
-        String query = "INSERT INTO itens_vendas (id_produto, id_data) VALUES (?,?)";
-        PreparedStatement ps = con.prepareStatement(query);
-        ps.setInt(1, produto.getId());
-        ps.setString (2, data_venda);
         
+        for (Produto p : listaProdutos) {
+        String query = "INSERT INTO itens_vendas (id_venda, id_produto, nome, categoria, data_venda) VALUES (?,?,?,?,?)";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setInt(1, id_venda);
+        ps.setInt(2, p.getId());
+        ps.setString(3, p.getProduto());
+        ps.setString(4, p.getCategoria());
+        ps.setString (5, data_venda);
         
         ps.execute();
+        
+        ps = con.prepareStatement("update produtos set ESTOQUE= ESTOQUE-1 WHERE ID= ?");
+        ps.setInt(1, p.getId());
+        ps.execute();
+        }
+        
     }
     
 }
