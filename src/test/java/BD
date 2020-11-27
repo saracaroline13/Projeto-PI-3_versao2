@@ -48,3 +48,10 @@ tipo_pagemento varchar(20) not null,
 total_venda double not null,
 foreign key (id_funcionario) references funcionarios (id),
 foreign key (cpf_cliente) references clientes (cpf));
+
+create table usuario (
+nome varchar not null,
+login varchar not null,
+senha varchar not null,
+perfil varchar not null
+);

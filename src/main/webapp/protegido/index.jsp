@@ -38,7 +38,7 @@
                     <table border="2" class="novo-funcionario" width=170 height=50>
 
                         <tr>
-                                <td><a href="<c:url value="/gerente/cadastrarFuncionario.jsp"/>" class="link-gestao">Novo Funcionario</a></td>
+                                <td><a href="<c:url value="/cadastrarFuncionario.jsp"/>" class="link-gestao">Novo Funcionario</a></td>
                         </tr>
 
                     </table>

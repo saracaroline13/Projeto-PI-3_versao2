@@ -11,7 +11,7 @@
     <%@include file = "../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/produtos.css" rel="stylesheet">
         
         <title>Produtos</title>
         
@@ -41,15 +41,15 @@
     </head>
     
     <body>
-        <header>
+       <%-- <header>
             <a href="index.jsp">
                 <img src="imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" />
             </a>
-        </header>
+        </header> --%>
         
         <main class="container">
             <h1>Lista de Produtos</h1>
-            <table id = "tbprodutos" class="table">
+            <table id = "tbprodutos" class="table" width=50 height=50>
                 <thead class="thead-light">
                 <th scope="col">Código</th>
                 <th scope="col">Produto</th>
@@ -57,7 +57,7 @@
                  <th scope="col">Tamanho</th>
                 <th scope="col">Valor</th>
                 <th scope="col">Filial</th>
-                <th scope="col">Qtd em Estoque</th>
+                <th scope="col">Estoque</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
             </thead>
@@ -111,6 +111,8 @@
         <footer>
             © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
+       
     </body>
+    
 </html>
 
