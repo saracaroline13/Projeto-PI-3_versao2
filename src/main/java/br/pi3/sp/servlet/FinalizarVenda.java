@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,22 +41,30 @@ public class FinalizarVenda extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        HttpSession sessao = request.getSession();
+        List<Produto> listaProdutos = (List<Produto>) sessao.getAttribute("listaProdutos");
+        
         String filial = request.getParameter("filial");
         String data_venda=request.getParameter("data_venda");
         int id_funcionario=Integer.parseInt(request.getParameter("id_funcionario"));
         String cpf_cliente=request.getParameter("cpf_cliente");
         String tipo_pagamento= request.getParameter("tipopagamento");
-        float total_venda= 0;//valor que deverá vir de um input com o total da venda!
+        double total_venda=0;
+        for (Produto p : listaProdutos) {
+        total_venda = total_venda+p.getValor();
+        }
          
-        HttpSession sessao = request.getSession();
-        List<Produto> listaProdutos = (List<Produto>) sessao.getAttribute("listaProdutos");
+        
        
         Venda venda = new Venda(filial, data_venda, id_funcionario, cpf_cliente, tipo_pagamento, total_venda);
         
         try {
-            VendaDAO.finalizarVenda(venda);
-            
+            int id_venda = VendaDAO.finalizarVenda(venda);
+            VendaDAO.cadastraritensvenda(id_venda, listaProdutos, data_venda);
+            listaProdutos = new ArrayList<>();
+            sessao.setAttribute("listaProdutos", listaProdutos);
             response.sendRedirect("sucesso.jsp");
+            
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(CadastrarProduto.class.getName()).log(Level.SEVERE, null, ex);
             Utils.mostrarTelaErro(ex, request, response);

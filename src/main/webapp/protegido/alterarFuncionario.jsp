@@ -4,14 +4,14 @@
     Author     : Matheus
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <%@include file = "../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/style.css" rel="stylesheet">
-        <title>AtualizaÃ§Ã£o de Funcionario</title>
+        <title>Atualização de Funcionario</title>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -25,7 +25,7 @@
         </header>
         
         <main class="container">
-        <h1>AlteraÃ§Ã£o de Cadastro do Funcionario: ${funcionario.nome}</h1>
+        <h1>Alteração de Cadastro do Funcionario: ${funcionario.nome}</h1>
         </br>
         <form action="AlterarFuncionario" method="POST">
             <p>Matricula</p>
@@ -63,7 +63,7 @@
             <button type="submit">Concluir</button>
             </main>
         <footer>
-            Â© 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
     </body>
 </html>
