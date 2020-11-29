@@ -66,7 +66,7 @@
                         
                     <table border="2" class="listar-cliente" width=170 height=50>
                         <tr>
-                            <td> <a href="<c:url value="/ListarClientes.jsp"/>" class="link-gestao">Listar Clientes</a></td>
+                            <td> <a href="<c:url value="/ListarClientes"/>" class="link-gestao">Listar Clientes</a></td>
                         </tr>
                     </table>
                         

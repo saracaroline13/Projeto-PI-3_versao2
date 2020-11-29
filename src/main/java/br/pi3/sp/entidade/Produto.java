@@ -51,7 +51,7 @@ public class Produto {
         if(obj == null){
             return false;
         }
-        final Cliente other = (Cliente) obj;
+        final Produto other = (Produto) obj;
         if (this.id != other.id){
             return false;
         }

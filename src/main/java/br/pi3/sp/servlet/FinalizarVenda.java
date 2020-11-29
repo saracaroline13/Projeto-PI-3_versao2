@@ -53,8 +53,6 @@ public class FinalizarVenda extends HttpServlet {
         for (Produto p : listaProdutos) {
         total_venda = total_venda+p.getValor();
         }
-         
-        
        
         Venda venda = new Venda(filial, data_venda, id_funcionario, cpf_cliente, tipo_pagamento, total_venda);
         

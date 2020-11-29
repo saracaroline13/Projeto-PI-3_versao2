@@ -32,7 +32,7 @@ public class CarrinhoServletMinus extends HttpServlet {
         
         List<Produto> listaProdutos = (List<Produto>) sessao.getAttribute("listaProdutos");
         
-        
+        listaProdutos.remove(produto);
        
         
         sessao.setAttribute("listaProdutos", listaProdutos);

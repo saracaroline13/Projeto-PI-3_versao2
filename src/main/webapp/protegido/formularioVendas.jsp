@@ -118,7 +118,7 @@
 
             <section class="finalizar">
                 <button type="submit" class="btn btn-success">Finalizar</button>
-                <button type="button" class="btn btn-primary" >Cancelar</button>
+                <a href="index.jsp"><button type="button" class="btn btn-primary" >Cancelar</button></a>
             </section>
 
 
@@ -241,7 +241,7 @@
                         });
                     }
                     //
-                    adicionaritemnasessao(id)
+                    adicionaritemnasessao(id);
                 }
                 
             }
@@ -309,13 +309,13 @@
                 $(tagEstoque).text(+$(tagEstoque).text() + 1);//if ternario   
 
                  //
-                    function retiraritemnasessao(currentId){
-                        $.get("CarrinhoServletMinus?currentId="+currentId, function( resposta){
+                    function retiraritemnasessao(id){
+                        $.get("CarrinhoServletMinus?currentId="+id, function( resposta){
                            console.log("retiradoo"); 
                         });
                     }
                     //
-                    retiraritemnasessao(id)
+                    retiraritemnasessao(id);
             }
             
            
