@@ -21,7 +21,7 @@ and open the template in the editor.
     padding: 0;
     text-align: center;
     color: white;
-    background: url(chutando-a-bola.jpg) no-repeat bottom center scroll;
+    background: url(../imagens/chutando-a-bola.jpg) no-repeat bottom center scroll;
     background-position: 30% 45%;
     background-color: black;
     -webkit-background-size: cover;
