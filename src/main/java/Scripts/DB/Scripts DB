@@ -49,6 +49,16 @@ total_venda double not null,
 foreign key (id_funcionario) references funcionarios (id),
 foreign key (cpf_cliente) references clientes (cpf));
 
+create table itens_vendas(
+id_venda int not null,
+id_produto int not null,
+nome varchar(100) not null,
+categoria varchar(50) not null,
+data_venda varchar(10) not null,
+preco_pago double not null,
+foreign key (id_produto) references produtos (id),
+foreign key (id_venda) references vendas (id_venda));
+
 create table usuario (
 nome varchar not null,
 login varchar not null,
@@ -56,11 +66,3 @@ senha varchar not null,
 perfil varchar not null
 );
 
-create table itens_vendas(
-id_venda int not null,
-id_produto int not null,
-nome varchar(100) not null,
-categoria varchar(50) not null,
-data_venda varchar(10) not null,
-foreign key (id_produto) references produtos (id),
-foreign key (id_venda) references vendas (id_venda));

@@ -4,7 +4,7 @@
     Author     : Matheus
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <%@include file = "../header.jsp" %>
@@ -29,7 +29,7 @@
 
                   <p>Categoria do Produto</p>
                   <select name="categoria">
-                  <option value="CalÃ§ados">CalÃ§ados</option>
+                  <option value="Calçados">Calçados</option>
                   <option value="Roupas">Roupas</option>
                   <option value="Equipamentos">Equipamentos</option>
                   </select></br>
@@ -37,7 +37,7 @@
                   <p>Tamanho</p>
                   <input name="tamanho" class="form-control" required="true"/></br>
 
-                  <p>PreÃ§o</p>
+                  <p>Preço</p>
                   <input name ="valor" class="form-control" required="true"/></br>
 
                   <p>Categoria do Produto</p>
@@ -59,7 +59,7 @@
         </main>
         
         <footer>
-            Â© 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
     </body>
 </html>

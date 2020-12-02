@@ -5,7 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <%@include file = "../header.jsp" %>
@@ -51,7 +51,7 @@
             <h1>Lista de Produtos</h1>
             <table id = "tbprodutos" class="table" width=50 height=50>
                 <thead class="thead-light">
-                <th scope="col">CÃ³digo</th>
+                <th scope="col">Código</th>
                 <th scope="col">Produto</th>
                 <th scope="col">Categoria</th>
                  <th scope="col">Tamanho</th>
@@ -86,13 +86,13 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Confirmar ExclusÃ£o</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Confirmar Exclusão</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                        Confirmar exclusÃ£o do Produto  <label id="nomeProduto"></label> ?
+                        Confirmar exclusão do Produto  <label id="nomeProduto"></label> ?
                         <input id="idProduto" hidden/>
 
                     </div>
@@ -109,7 +109,7 @@
         </main>
         
         <footer>
-            Â© 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
+            © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
        
     </body>

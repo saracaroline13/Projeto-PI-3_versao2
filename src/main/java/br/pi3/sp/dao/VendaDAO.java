@@ -6,14 +6,20 @@
 package br.pi3.sp.dao;
 
 import br.pi3.sp.conexaobd.ConexaoBD;
+import br.pi3.sp.entidade.Funcionario;
 import br.pi3.sp.entidade.Produto;
 import br.pi3.sp.entidade.Venda;
+import br.pi3.sp.servlet.ServletBD;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -45,13 +51,14 @@ public class VendaDAO {
         Connection con = ConexaoBD.getConexao();
         
         for (Produto p : listaProdutos) {
-        String query = "INSERT INTO itens_vendas (id_venda, id_produto, nome, categoria, data_venda) VALUES (?,?,?,?,?)";
+        String query = "INSERT INTO itens_vendas (id_venda, id_produto, nome, categoria, preco_pago, data_venda) VALUES (?,?,?,?,?,?)";
         PreparedStatement ps = con.prepareStatement(query);
         ps.setInt(1, id_venda);
         ps.setInt(2, p.getId());
         ps.setString(3, p.getProduto());
         ps.setString(4, p.getCategoria());
-        ps.setString (5, data_venda);
+        ps.setDouble(5,p.getValor());
+        ps.setString (6, data_venda);
         
         ps.execute();
         
@@ -62,4 +69,5 @@ public class VendaDAO {
         
     }
     
+   
 }

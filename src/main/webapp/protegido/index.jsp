@@ -100,14 +100,26 @@
                                 </select></br>
                                 <a href="<c:url value="/ListarVendas"/>" class="link-gestao">Realizar Venda</a></td>
                         </tr>
-                    </table>
-                              
+                    </table><br>
+                    
+                    <h6 class="r">Relatórios</h6> 
+                    <table border="3" class="tabela-relatorios" width=350 height=60>
+                        <tr>
+                            <form action="<c:url value="/Direcionarelatorio"/>" method="get">
+                        <td>Selecione o tipo de Relatório: <select name="tipo_relatorio">
+                                    <option value="Vendas">Vendas</option>
+                                    <option value="Categoria">Categoria</option>
+                                    <option value="Clientes">Clientes</option>
+                                </select>
+                            <button type="submit" class="btn btn-success btn-sm"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 8.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z"/>
+</svg></button>
+                            </form>
+                        </td>
+                         </tr>
+                    </table>    
                         
-                                
-                                
-                                
-                                
-                </div>
+                   
            </main>
         
         <br>
