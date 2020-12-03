@@ -13,7 +13,9 @@ contato varchar(14) not null,
 rua varchar(60) not null,
 bairro varchar(60) not null,
 cep char(9) not null,
-cidade varchar(35) not null);
+cidade varchar(35) not null,
+login varchar(60) not null,
+senha varchar(300) not null);
 select*from funcionarios;
 
 create table clientes(
@@ -58,11 +60,4 @@ data_venda varchar(10) not null,
 preco_pago double not null,
 foreign key (id_produto) references produtos (id),
 foreign key (id_venda) references vendas (id_venda));
-
-create table usuario (
-nome varchar not null,
-login varchar not null,
-senha varchar not null,
-perfil varchar not null
-);
 
