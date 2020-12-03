@@ -5,7 +5,7 @@
  */
 package br.pi3.sp.filter;
 
-import br.pi3.sp.entidade.Usuario;
+import br.pi3.sp.entidade.Funcionario;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -43,13 +43,13 @@ public class AutorizacaoFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         
         HttpSession sessao = httpRequest.getSession();
-        if (sessao.getAttribute("usuario") == null){
+        if (sessao.getAttribute("user") == null){
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/login.jsp");
         }
         
-        Usuario usuario = (Usuario) sessao.getAttribute("usuario");
+        Funcionario funcionario = (Funcionario) sessao.getAttribute("user");
         String url = httpRequest.getRequestURI();
-        if (url.contains("/gerente/") && !usuario.isGerente()) {
+        if (url.contains("/gerente/") && !funcionario.isGerente()) {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/acessoNaoAutorizado.jsp");
         }
         

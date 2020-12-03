@@ -29,6 +29,7 @@ public class CadastrarFuncionario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Funcionario fun = new Funcionario();
         String filial = request.getParameter("filial");
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
@@ -43,9 +44,11 @@ public class CadastrarFuncionario extends HttpServlet {
         String bairro = request.getParameter("bairro");
         String cep = request.getParameter("cep");
         String cidade = request.getParameter("cidade");
+        String login = request.getParameter("login");
+        String senha = fun.codificarSenha(request.getParameter("senha"));
          
         
-        Funcionario funcionario = new Funcionario( filial, nome, cpf, sexo, data_nasc, estado_civil, cargo, salario, email, contato, rua, bairro, cep, cidade);
+        Funcionario funcionario = new Funcionario( filial, nome, cpf, sexo, data_nasc, estado_civil, cargo, salario, email, contato, rua, bairro, cep, cidade, login, senha);
         try {
             FuncionarioDAO.addFuncionario(funcionario);
             response.sendRedirect("sucesso.jsp");

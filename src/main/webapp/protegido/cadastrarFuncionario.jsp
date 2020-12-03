@@ -4,6 +4,7 @@
     Author     : Matheus
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,7 @@
         <main class="container">
         <h1>Cadastro</h1>
         
-        <form action="CadastrarFuncionario" method="POST">
+        <form action="<c:url value="/CadastrarFuncionario"/>" method="POST">
             <p>Categoria do Produto</p>
               <select name="filial">
               <option value="Shop_SportsSP_1">Shop_SportsSP_1</option>
@@ -51,7 +52,7 @@
             <p> Salario</p>
             <input name="salario" class="form-control" required="true"/></br>
             <p>E-mail</p>
-            <input name="email" minlength="9" maxlength="14" class="form-control" required="true"/></br>
+            <input name="email" minlength="9"  class="form-control" required="true"/></br>
             <p>Celular</p>
             <input name="contato" class="form-control" onkeypress="$(this).mask('(00)00000-0000');" required="true"/></br>
             <p>Rua</p>
@@ -62,6 +63,11 @@
             <input name="cep" class="form-control" onkeypress="$(this).mask('00000-000');" required="true"/></br>
             <p>Cidade</p>
             <input name="cidade" class="form-control" required="true"/></br>
+            
+            <p>Login</p>
+            <input name="login" class="form-control" required="true"/></br>
+            <p>Senha</p>
+            <input name="senha" type ="password" class="form-control" required="true"/></br>
             
             <button type="submit" class="btn btn-primary">Concluir</button>
         </main>

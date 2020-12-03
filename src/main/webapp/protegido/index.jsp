@@ -29,12 +29,12 @@
         </header> --%>
                    
         <main>
-                    <h3 class="welcome">Bem vindo, ${sessionScope.usuario.nome}</h3>
+                    <h3 class="welcome">Bem vindo, ${sessionScope.user.nome}</h3>
                     <h4 class="titulo">GESTÃO</h4>
                      
                     
                    <h6 class="f">Funcionários</h6>
-                   <c:if test="${sessionScope.usuario.gerente}">
+                   <c:if test="${sessionScope.user.gerente}">
                     <table border="2" class="novo-funcionario" width=170 height=50>
 
                         <tr>
@@ -54,7 +54,7 @@
                         
                         
                     <h6 class="c">Clientes</h6>
-                    <c:if test="${sessionScope.usuario.gerente}">
+                    <c:if test="${sessionScope.user.gerente}">
                     <table border="2" class="novo-cliente" width=170 height=50>
                         <tr>
                                 <td> <a href="<c:url value="/cadastrarCliente.jsp"/>" class="link-gestao">Novo Cliente</a></td>
@@ -73,7 +73,7 @@
                         
 
                      <h6 class="p">Produtos</h6>   
-                    <c:if test="${sessionScope.usuario.gerente}">
+                    <c:if test="${sessionScope.user.gerente}">
                     <table border="2" class="novo-produto" width=170 height=50>
                         <tr>
                                 <td> <a href="<c:url value="/cadastrarProduto.jsp"/>" class="link-gestao">Novo Produto</a></td>
@@ -92,12 +92,7 @@
                      <h6 class="v">Vendas</h6>  
                     <table border="3" class="tabela-vendas" width=170 height=105>
                         <tr>
-                            <td> <select name="filial" class="opcao">
-                                    <option value="ShopSports_SP_1">ShopSports_SP_1</option>
-                                    <option value="ShopSports_SP_2">ShopSports_SP_2</option>
-                                    <option value="ShopSports_RJ_1">ShopSports_RJ_1</option>
-                                    <option value="ShopSports_RJ_2">ShopSports_RJ_2</option>
-                                </select></br>
+                            <td> 
                                 <a href="<c:url value="/ListarVendas"/>" class="link-gestao">Realizar Venda</a></td>
                         </tr>
                     </table><br>

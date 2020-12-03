@@ -5,10 +5,10 @@
  */
 package br.pi3.sp.servlet;
 
-import br.pi3.sp.dao.UsuarioDAO;
-import br.pi3.sp.entidade.Usuario;
+
+import br.pi3.sp.dao.FuncionarioDAO;
+import br.pi3.sp.entidade.Funcionario;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,11 +30,11 @@ public class LoginServlet extends HttpServlet {
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         
-        Usuario usuario = UsuarioDAO.getUsuario(login);
-        if (usuario != null && usuario.validarSenha(senha)){
+        Funcionario funcionario = FuncionarioDAO.getUsuario(login);
+        if (funcionario != null && funcionario.validarSenha(senha)){
             
             HttpSession sessao = request.getSession();
-            sessao.setAttribute("usuario", usuario);
+            sessao.setAttribute("user", funcionario);
             response.sendRedirect(request.getContextPath() + "/protegido/index.jsp");
             
         } else {

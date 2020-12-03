@@ -5,6 +5,7 @@
  */
 package br.pi3.sp.entidade;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,8 +32,10 @@ private String rua;
 private String bairro;
 private String cep;
 private String cidade;
+private String login;
+private String senha;
 
-    public Funcionario(int id, String filial, String nome, String cpf, String sexo, String data_nasc, String estado_civil, String cargo, double salario, String email, String contato, String rua, String bairro, String cep, String cidade) {
+    public Funcionario(int id, String filial, String nome, String cpf, String sexo, String data_nasc, String estado_civil, String cargo, double salario, String email, String contato, String rua, String bairro, String cep, String cidade, String login, String senha) {
         this.id = id;
         this.filial = filial;
         this.nome = nome;
@@ -48,9 +51,11 @@ private String cidade;
         this.bairro = bairro;
         this.cep = cep;
         this.cidade = cidade;
+        this.login = login;
+        this.senha = senha;
     }
 
-    public Funcionario(String filial, String nome, String cpf, String sexo, String data_nasc, String estado_civil, String cargo, double salario, String email, String contato, String rua, String bairro, String cep, String cidade) {
+    public Funcionario(String filial, String nome, String cpf, String sexo, String data_nasc, String estado_civil, String cargo, double salario, String email, String contato, String rua, String bairro, String cep, String cidade, String login, String senha) {
         this.filial = filial;
         this.nome = nome;
         this.cpf = cpf;
@@ -65,11 +70,36 @@ private String cidade;
         this.bairro = bairro;
         this.cep = cep;
         this.cidade = cidade;
+        this.login = login;
+        this.senha = senha;
     }
     
-    @Override
-    public String toString(){
-        return String.format("<br/>Id: "+this.id+"<br/>Filial: "+this.filial+"</br>Nome: "+this.nome);
+    public Funcionario(){
+        
+    }
+     public String codificarSenha (String senha){
+        return BCrypt.withDefaults().hashToString(12, senha.toCharArray());
+    }
+    
+    public boolean validarSenha(String senha){
+        BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), this.senha);
+        return response.verified;
+    }
+    
+    public boolean isGerente(){
+        return this.cargo.equalsIgnoreCase("gerente");
+    }
+    
+    public boolean isVendedor(){
+        return this.cargo.equalsIgnoreCase("vendedor");
+    }
+    
+    public boolean isEstoquista(){
+        return this.cargo.equalsIgnoreCase("estoquista");
+    }
+    
+    public boolean isRh(){
+        return this.cargo.equalsIgnoreCase("rh");
     }
 
     
