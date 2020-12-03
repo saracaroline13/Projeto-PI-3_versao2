@@ -21,18 +21,9 @@
         
         <form action="FinalizarVenda" method="POST" class="container">
             
-            <input name="data_venda" id="data" onkeypress="$(this).mask('00/00/0000');" required="true"/></br>
-            <label for="id_funcionario" required="true">Matricula Funcionário</label>
-            <input type="text" name="id_funcionario" required="true">
-                  Filial
-                  <select name="filial">
-                  <option value="Shop_SportsSP_1">Shop_SportsSP_1</option>
-                  <option value="Shop_SportsSP_2">Shop_SportsSP_2</option>
-                  <option value="Shop_SportsSP_3">Shop_SportsSP_3</option>
-                  <option value="Shop_SportsRJ_1">Shop_SportsRJ_1</option>
-                  </select></br>
-
-            <label for="cliente">CPF Cliente</label>
+            <p>Data: <input name="data_venda" id="data" onkeypress="$(this).mask('00/00/0000');" required="true"/></p>
+            
+            <label for="cliente">CPF Cliente:</label>
             <input type="cpf_cliente" name="cpf_cliente" maxlength="11"></br>
         
        

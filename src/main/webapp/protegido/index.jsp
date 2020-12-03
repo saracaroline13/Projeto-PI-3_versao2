@@ -29,7 +29,8 @@
         </header> --%>
                    
         <main>
-                    <h3 class="welcome">Bem vindo, ${sessionScope.user.nome}</h3>
+            <h3 class="welcome">Bem vindo, ${sessionScope.user.nome}</h3></br>
+                    <h4 >Você está na loja ${sessionScope.user.filial}</h4>
                     <h4 class="titulo">GESTÃO</h4>
                      
                     

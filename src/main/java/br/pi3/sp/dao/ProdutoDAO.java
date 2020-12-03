@@ -145,4 +145,33 @@ public class ProdutoDAO {
         
         ps.execute();
     }
+    
+    public static List<Produto> getProdutosFilial(String filial_user) {
+        List<Produto> listaProdutos = new ArrayList();
+        try {
+            Connection con = ConexaoBD.getConexao();
+            String query = "select * from produtos where filial = ?";
+            PreparedStatement ps = con.prepareCall(query);
+            ps.setString(1,filial_user);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String produto = rs.getString("produto");
+                String categoria = rs.getString("categoria");
+                String tamanho = rs.getString("tamanho");
+                Double valor = rs.getDouble("valor");
+                String filial = rs.getString("filial");
+                int estoque = rs.getInt("estoque");
+                
+                
+                listaProdutos.add(new Produto(id, produto, categoria, tamanho, valor, filial, estoque)) ;   
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+   return listaProdutos;
+    }
 }
