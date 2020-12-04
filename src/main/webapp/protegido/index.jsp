@@ -35,11 +35,7 @@
     </head>
     
     <body class="teste">
-      <%--   <header>
-            <a href="index.jsp">
-               <%-- <img src="../imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" width=200 height=100/> 
-            </a>
-        </header> --%>
+      
                    
         <main>
             <h3 class="welcome">Bem vindo, ${sessionScope.user.nome}</h4></br>
