@@ -16,6 +16,7 @@
         
         <title>Relatório | Export</title>
     </head>
+    
     <script>
         function exportTableToExcel(tableID, filename = ''){
     var downloadLink;
@@ -49,6 +50,7 @@
 }
         </script>
     <body>
+        
         <h1>RELATÓRIO DE VENDAS | DETALHE</h1></br>
     <center><div>
             

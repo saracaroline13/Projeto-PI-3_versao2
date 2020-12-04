@@ -18,17 +18,70 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         
         <title>Relatório de Vendas</title>
+       
+        <style>
+            
+            body {
+                
+                padding: 0;
+                background: url(../imagens/chutando-a-bola.jpg) no-repeat bottom center scroll;
+                background-position: 30% 15%;
+                background-color: black;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                background-size: cover;
+                -o-background-size: cover;
+            }
+            
+            div {
+                padding: 2%;
+                margin-top: 15rem;
+                background-color: darkgreen;
+                border-radius: 1rem;
+                width: 60%;
+                opacity: 0.8;
+            }
+            
+            h1, p {
+                color: white;
+            }
+            
+            #periodo {
+                color: white;
+            }
+            
+            #filial {
+                color: white;
+            }
+            
+            .btn-primary {
+                background-color: gray;
+                border-color: gray;
+            }
+            
+            .btn-primary:hover {
+                background-color: darkgray;
+                border-color: gray;
+            }
+            
+        </style>
+        
+        
+        
     </head>
     <body>
+        
+    <center>
+        <div>
         <h1>Relatório de Vendas</h1>
   
         <form action="<c:url value="/RelatorioVendas"/>" method="GET">
             
-            <label>Período</label></br>
-            <p>De:<input type="text" name="de" onkeypress="$(this).mask('00/00/0000');" placeholder="dd/mm/aaaa" size="10" minlength="10" required="true"></input> 
-            Até:<input type="text" name="ate" onkeypress="$(this).mask('00/00/0000');" placeholder="dd/mm/aaaa" size="10" minlength="10" required="true"></input></p>
+            <label id="periodo">Período</label></br>
+            <p>De:&ensp;&ensp;<input type="text" name="de" onkeypress="$(this).mask('00/00/0000');" placeholder="dd/mm/aaaa" size="10" minlength="10" required="true"></input> 
+            &ensp;Até:&ensp;&ensp;<input type="text" name="ate" onkeypress="$(this).mask('00/00/0000');" placeholder="dd/mm/aaaa" size="10" minlength="10" required="true"></input></p>
             
-            Filial:
+            <label id="filial"> Filial: </label>
                   <select name="filial">
                   <option value="Shop_SportsSP_1">Shop_SportsSP_1</option>
                   <option value="Shop_SportsSP_2">Shop_SportsSP_2</option>
@@ -45,5 +98,7 @@
 </svg></button></a>
             
         </form>
+  </div>
+  </center>
     </body>
 </html>
