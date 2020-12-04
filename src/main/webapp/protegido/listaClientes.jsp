@@ -38,55 +38,122 @@
           }
         </script>  
         
+        <style>
+            
+            body {
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                padding: 0;
+                background: url(imagens/chutando-a-bola.jpg) no-repeat bottom center scroll;
+                background-position: 30% 45%;
+                background-color: black;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                background-size: cover;
+                -o-background-size: cover;
+            }
+
+            
+            h1{
+                color: white;
+                font-family: Courier New, monospace;
+                font-size:53px;
+            }
+            
+            footer {
+                color: white;
+                font-family: Courier New, monospace;
+            }
+            
+            td {
+                background-color: white;
+            }
+            
+            
+            
+            #menu {
+                position: absolute;
+                right: 650px;
+                top: 550px;
+                color: white;
+                font-family: Courier New, monospace;
+                font-weight: lighter;
+            }
+            
+            
+            .btn-primary {
+                background-color: green;
+                border-color: white;
+            }
+            
+            .btn-secondary {
+                background-color: red;
+                border-color: white;
+            }
+            
+            .btn-primary:hover {
+                background-color: darkgreen;
+                border-color: gray;
+            }
+            
+            .btn-secondary:hover {
+                background-color: darkred;
+                border-color: gray;
+            }
+            
+        </style>
+        
     </head>
     
     <body>
-        <header>
-            <a href="index.jsp">
-                <img src="imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" />
-            </a>
-        </header>
+        
         
         <main class="container">
-            <h1>Lista de Clientes</h1>
-            <table id="tbclientes"class="table">
-                <thead class="thead-light">
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Cpf</th>
-                <th scope="col">Sexo</th>
-                <th scope="col">Email</th>
-                <th scope="col">Celular</th>
-                <th scope="col">Rua</th>
-                <th scope="col">Bairro</th>
-                <th scope="col">Cep</th>
-                <th scope="col">Cidade</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </thead>
-            <tbody>
-                <c:forEach var="cliente" items="${listaClientes}">
-                    <tr>
-                        <td>${cliente.id}</td> 
-                        <td>${cliente.nome}</td>
-                        <td>${cliente.cpf}</td> 
-                        <td>${cliente.sexo}</td>  
-                        <td>${cliente.email}</td> 
-                        <td>${cliente.celular}</td> 
-                        <td>${cliente.rua}</td> 
-                        <td>${cliente.bairro}</td> 
-                        <td>${cliente.cep}</td> 
-                        <td>${cliente.cidade}</td> 
-                        <td><a href="AlterarCliente?id=${cliente.id}">Alterar</a></td> 
-                        <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${cliente.id},' ${cliente.nome}')">Excluir</button></td>
+            <h1>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Lista de Clientes</h1>
+            </br>
+             </br>
+             
+            <div style="overflow-x:auto;">
+                <table id="tbclientes"class="table table-striped">
+                    <thead class="thead-light">
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Cpf</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Cep</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="cliente" items="${listaClientes}">
+                            <tr>
+                                <td>${cliente.id}</td> 
+                                <td>${cliente.nome}</td>
+                                <td>${cliente.cpf}</td> 
+                                <td>${cliente.sexo}</td>  
+                                <td>${cliente.email}</td> 
+                                <td>${cliente.celular}</td> 
+                                <td>${cliente.rua}</td> 
+                                <td>${cliente.bairro}</td> 
+                                <td>${cliente.cep}</td> 
+                                <td>${cliente.cidade}</td> 
+                                <td><a href="AlterarCliente?id=${cliente.id}" class="btn btn-primary">Alterar</a></td> 
+                                <td><button type="button" class="btn btn-secondary" onclick="mostrarModalExclusao(${cliente.id},' ${cliente.nome}')">Excluir</button></td>
 
-                    </tr>
+                            </tr>
 
-                </c:forEach>
+                        </c:forEach>
 
 
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
+            </div>
            
      <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -110,7 +177,7 @@
                 </div>
               </div>
             </br>
-            <a href="/protegido/index.jsp">MENU</a>
+            <a href="index.jsp" id="menu">MENU</a>
         </main>
         
         <footer>

@@ -11,7 +11,7 @@
     <%@include file = "../header.jsp" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/produtos.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
         
         <title>Produtos</title>
         
@@ -37,51 +37,125 @@
                 });
           }
                 
-        </script>  
+        </script> 
+        
+        <style>
+            
+             body {
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                padding: 0;
+                background: url(imagens/chutando-a-bola.jpg) no-repeat bottom center scroll;
+                background-position: 30% 45%;
+                background-color: black;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                background-size: cover;
+                -o-background-size: cover;
+            }
+
+            
+            h1{
+                color: white;
+                font-family: Courier New, monospace;
+                font-size:53px;
+            }
+            
+            footer {
+                color: white;
+                font-family: Courier New, monospace;
+            }
+            
+            td {
+                background-color: white;
+            }
+            
+            
+            
+            #menu {
+                position: absolute;
+                right: 650px;
+                top: 550px;
+                color: white;
+                font-family: Courier New, monospace;
+                font-weight: lighter;
+            }
+            
+            
+            .btn-primary {
+                background-color: green;
+                border-color: white;
+            }
+            
+            .btn-secondary {
+                background-color: red;
+                border-color: white;
+            }
+            
+            .btn-primary:hover {
+                background-color: darkgreen;
+                border-color: gray;
+            }
+            
+            .btn-secondary:hover {
+                background-color: darkred;
+                border-color: gray;
+            }
+            
+            
+            
+            
+        </style>
+        
+        
+        
     </head>
     
     <body>
-       <%-- <header>
-            <a href="index.jsp">
-                <img src="imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" />
-            </a>
-        </header> --%>
+       
         
         <main class="container">
-            <h1>Lista de Produtos</h1>
-            <table id = "tbprodutos" class="table" width=50 height=50>
-                <thead class="thead-light">
-                <th scope="col">Código</th>
-                <th scope="col">Produto</th>
-                <th scope="col">Categoria</th>
-                 <th scope="col">Tamanho</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Filial</th>
-                <th scope="col">Estoque</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </thead>
-            <tbody>
-                <c:forEach var="produto" items="${listaProdutos}">
-                    <tr>
-                        <td>${produto.id}</td> 
-                        <td>${produto.produto}</td> 
-                        <td>${produto.categoria}</td>
-                        <td>${produto.tamanho}</td>
-                        <td>${produto.valor}</td> 
-                        <td>${produto.filial}</td>
-                        <td>${produto.estoque}</td> 
+            <h1>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Lista de Produtos</h1>
+            </br>
+            </br>
 
-                        <td><a href="AlterarProduto?id=${produto.id}">Alterar</a></td> 
-                        <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${produto.id},' ${produto.produto}')">Excluir</button></td>
+            <div style="overflow-x:auto;">
+                <table id = "tbprodutos" class="table table-striped" width=50 height=50>
+                    <thead class="thead-light">
+                    <th scope="col">Código</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Tamanho</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Filial</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="produto" items="${listaProdutos}">
+                            <tr>
+                                <td>${produto.id}</td> 
+                                <td>${produto.produto}</td> 
+                                <td>${produto.categoria}</td>
+                                <td>${produto.tamanho}</td>
+                                <td>${produto.valor}</td> 
+                                <td>${produto.filial}</td>
+                                <td>${produto.estoque}</td> 
 
-                    </tr>
+                                <td><a href="AlterarProduto?id=${produto.id}" class="btn btn-primary">Alterar</a></td> 
+                                <td><button type="button" class="btn btn-secondary" onclick="mostrarModalExclusao(${produto.id},' ${produto.produto}')">Excluir</button></td>
 
-                </c:forEach>
+                            </tr>
+
+                        </c:forEach>
 
 
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
+            </div>
+            
             <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -105,7 +179,7 @@
               </div>
 
 
-            <a href="index.jsp">MENU</a>
+            <a href="index.jsp" id="menu">MENU</a>
         </main>
         
         <footer>

@@ -29,12 +29,13 @@
         </header> --%>
                    
         <main>
-            <h3 class="welcome">Bem vindo, ${sessionScope.user.nome}</h3></br>
-                    <h4 >Você está na loja ${sessionScope.user.filial}</h4>
+            <h3 class="welcome">Bem vindo, ${sessionScope.user.nome}</h4></br>
+                    <h6 id="ondeesta">Você está na loja ${sessionScope.user.filial}</h6>
                     <h4 class="titulo">GESTÃO</h4>
                      
                     
                    <h6 class="f">Funcionários</h6>
+                   
                    <c:if test="${sessionScope.user.gerente}">
                     <table border="2" class="novo-funcionario" width=170 height=50>
 
@@ -45,16 +46,62 @@
                     </table>
                     </c:if>
                     
-
+                    <c:if test="${sessionScope.user.gerente}">
                     <table border="2" class="listar-funcionario" width=170 height=50>
                         <tr>
                             <td> <a href="<c:url value="/ListarFuncionarios"/>" class="link-gestao">Listar Funcionarios</a></td>
                         </tr>
                     </table>
-                        
+                    </c:if>
+                   
+                   
+                    <c:if test="${sessionScope.user.vendedor}">
+                    <table border="2" class="novo-funcionario" width=170 height=50>
+
+                        <tr>
+                                <td><a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Novo Funcionario</a></td>
+                        </tr>
+
+                    </table>
+                    </c:if>
+                   
+                   
+                   <c:if test="${sessionScope.user.vendedor}">
+                    <table border="2" class="listar-funcionario" width=170 height=50>
+                        <tr>
+                            <td> <a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Listar Funcionarios</a></td>
+                        </tr>
+                    </table>
+                    </c:if>
+                   
+                   <c:if test="${sessionScope.user.estoquista}">
+                    <table border="2" class="novo-funcionario" width=170 height=50>
+
+                        <tr>
+                                <td><a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Novo Funcionario</a></td>
+                        </tr>
+
+                    </table>
+                    </c:if>
+                   
+                   
+                   <c:if test="${sessionScope.user.estoquista}">
+                    <table border="2" class="listar-funcionario" width=170 height=50>
+                        <tr>
+                            <td> <a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Listar Funcionarios</a></td>
+                        </tr>
+                    </table>
+                    </c:if>
+                   
+                   
+                   
+                   
+                   
+                   
                         
                         
                     <h6 class="c">Clientes</h6>
+                    
                     <c:if test="${sessionScope.user.gerente}">
                     <table border="2" class="novo-cliente" width=170 height=50>
                         <tr>
@@ -64,16 +111,61 @@
                     </c:if>            
 
                         
-                        
+                     <c:if test="${sessionScope.user.gerente}">   
                     <table border="2" class="listar-cliente" width=170 height=50>
                         <tr>
                             <td> <a href="<c:url value="/ListarClientes"/>" class="link-gestao">Listar Clientes</a></td>
                         </tr>
                     </table>
+                     </c:if> 
+                    
+                    
+                    <c:if test="${sessionScope.user.vendedor}">
+                    <table border="2" class="novo-cliente" width=170 height=50>
+                        <tr>
+                                <td> <a href="<c:url value="/cadastrarCliente.jsp"/>" class="link-gestao">Novo Cliente</a></td>
+                        </tr>
+                    </table>
+                    </c:if>            
+
                         
+                     <c:if test="${sessionScope.user.vendedor}">   
+                    <table border="2" class="listar-cliente" width=170 height=50>
+                        <tr>
+                            <td> <a href="<c:url value="/ListarClientes"/>" class="link-gestao">Listar Clientes</a></td>
+                        </tr>
+                    </table>
+                     </c:if> 
+                    
+                    
+                    <c:if test="${sessionScope.user.estoquista}">
+                    <table border="2" class="novo-cliente" width=170 height=50>
+                        <tr>
+                                <td> <a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Novo Cliente</a></td>
+                        </tr>
+                    </table>
+                    </c:if>            
+
+                        
+                     <c:if test="${sessionScope.user.estoquista}">   
+                    <table border="2" class="listar-cliente" width=170 height=50>
+                        <tr>
+                            <td> <a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Listar Clientes</a></td>
+                        </tr>
+                    </table>
+                     </c:if> 
+                    
+   
+                    
+                    
+                    
+                    
+                    
+                    
                         
 
                      <h6 class="p">Produtos</h6>   
+                     
                     <c:if test="${sessionScope.user.gerente}">
                     <table border="2" class="novo-produto" width=170 height=50>
                         <tr>
@@ -82,22 +174,94 @@
                     </table>
                     </c:if>
                         
-                        
+                    <c:if test="${sessionScope.user.gerente}">    
                     <table border="2" class="listar-produtos" width=170 height=50>
                         <tr>
                             <td> <a href="<c:url value="/ListarProdutos"/>" class="link-gestao">Listar Produtos</a></td>
                         </tr>
                     </table>
-
+                    </c:if>
+                     
+                     
+                     <c:if test="${sessionScope.user.vendedor}">
+                    <table border="2" class="novo-produto" width=170 height=50>
+                        <tr>
+                                <td> <a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Novo Produto</a></td>
+                        </tr>
+                    </table>
+                    </c:if>
                         
-                     <h6 class="v">Vendas</h6>  
+                    <c:if test="${sessionScope.user.vendedor}">    
+                    <table border="2" class="listar-produtos" width=170 height=50>
+                        <tr>
+                            <td> <a href="<c:url value="/ListarProdutos"/>" class="link-gestao">Listar Produtos</a></td>
+                        </tr>
+                    </table>
+                    </c:if>   
+                        
+                    
+                      <c:if test="${sessionScope.user.estoquista}">
+                    <table border="2" class="novo-produto" width=170 height=50>
+                        <tr>
+                                <td> <a href="<c:url value="/cadastrarProduto.jsp"/>" class="link-gestao">Novo Produto</a></td>
+                        </tr>
+                    </table>
+                    </c:if>
+                        
+                    <c:if test="${sessionScope.user.estoquista}">    
+                    <table border="2" class="listar-produtos" width=170 height=50>
+                        <tr>
+                            <td> <a href="<c:url value="/ListarProdutos"/>" class="link-gestao">Listar Produtos</a></td>
+                        </tr>
+                    </table>
+                    </c:if>
+                        
+                        
+                        
+                    
+                        
+
+                      
+                     <h6 class="v">Vendas</h6> 
+                     
+                     <c:if test="${sessionScope.user.gerente}">     
                     <table border="3" class="tabela-vendas" width=170 height=105>
                         <tr>
                             <td> 
                                 <a href="<c:url value="/ListarVendas"/>" class="link-gestao">Realizar Venda</a></td>
                         </tr>
                     </table><br>
+                  </c:if>
                     
+                     <c:if test="${sessionScope.user.vendedor}">     
+                    <table border="3" class="tabela-vendas" width=170 height=105>
+                        <tr>
+                            <td> 
+                                <a href="<c:url value="/ListarVendas"/>" class="link-gestao">Realizar Venda</a></td>
+                        </tr>
+                    </table><br>
+                  </c:if>
+                    
+                    
+                    <c:if test="${sessionScope.user.estoquista}">     
+                    <table border="3" class="tabela-vendas" width=170 height=105>
+                        <tr>
+                            <td> 
+                                <a href="<c:url value="../acessoNaoAutorizado.jsp"/>" class="link-gestao">Realizar Venda</a></td>
+                        </tr>
+                    </table><br>
+                  </c:if>
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <c:if test="${sessionScope.user.gerente}"> 
                     <h6 class="r">Relatórios</h6> 
                     <table border="3" class="tabela-relatorios" width=350 height=60>
                         <tr>
@@ -114,7 +278,7 @@
                         </td>
                          </tr>
                     </table>    
-                        
+                    </c:if>    
                    
            </main>
         

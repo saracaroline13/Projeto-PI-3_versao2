@@ -43,23 +43,76 @@
         
         <style>
             
+            body {
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                padding: 0;
+                background: url(imagens/chutando-a-bola.jpg) no-repeat bottom center scroll;
+                background-position: 30% 45%;
+                background-color: black;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                background-size: cover;
+                -o-background-size: cover;
+            }
+
+            
             h1{
-                color: green;
+                color: white;
+                font-family: Courier New, monospace;
+                font-size:53px;
+            }
+            
+            footer {
+                color: white;
+                font-family: Courier New, monospace;
+            }
+            
+            #menu {
+                position: absolute;
+                right: 650px;
+                top: 550px;
+                color: white;
+                font-family: Courier New, monospace;
+                font-weight: lighter;
+            }
+            
+            td {
+                background-color: white;
+            }
+            
+            .btn-primary {
+                background-color: green;
+                border-color: white;
+            }
+            
+            .btn-secondary {
+                background-color: red;
+                border-color: white;
+            }
+            
+            .btn-primary:hover {
+                background-color: darkgreen;
+                border-color: gray;
+            }
+            
+            .btn-secondary:hover {
+                background-color: darkred;
+                border-color: gray;
             }
             
         </style>
         
         
-        
-        
-        
     </head>
+    
     
     <body>
        
         
         <main class="container">
-            <h1>Lista de Funcionarios</h1>
+            <h1>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Lista de Funcionários</h1>
           
             </br>
              </br>
@@ -113,7 +166,7 @@
                                  <td>${funcionario.cidade}</td>
                                  
                                  <td><a href="AlterarFuncionario?id=${funcionario.id}"><button class="btn btn-primary">Alterar</button></a></td> 
-                                 <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${funcionario.id},' ${funcionario.nome}')">Excluir</button></td>
+                                 <td><button type="button" class="btn btn-secondary" onclick="mostrarModalExclusao(${funcionario.id},' ${funcionario.nome}')">Excluir</button></td>
                              </tr>
                          </c:forEach>
                      </tbody>
@@ -142,7 +195,7 @@
                 </div>
             </div>
             </br>
-            <a href="index.jsp">MENU</a>
+            <a href="index.jsp" id="menu">MENU</a>
         </main>
         <footer>
             © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
