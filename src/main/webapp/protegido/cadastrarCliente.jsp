@@ -25,7 +25,7 @@
             <h1>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
             &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Cadastro</h1>
 
-            <form action="CadastrarCliente" method="POST">
+            <form action="<c:url value="/CadastrarCliente"/>" method="POST">
                 </br>
                 
                 <p id="titulo-nome">Nome</p>
