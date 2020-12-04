@@ -20,7 +20,7 @@
             
             <h1>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Cadastro de Produtos</h1>
             
-            <form action="CadastrarProduto" method="POST">
+            <form action="<c:url value="/CadastrarProduto"/>" method="POST">
                 
                 </br>
                 </br>
