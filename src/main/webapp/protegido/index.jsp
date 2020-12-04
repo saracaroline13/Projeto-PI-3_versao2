@@ -19,6 +19,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../css/style.css" />
         <title>Menu</title>
+        
+        <style>
+            
+            h6 {
+                position: absolute;
+                top: 90px;
+                right: 535px;
+                font-weight: 320;
+                
+            }
+            
+        </style>
+        
     </head>
     
     <body class="teste">
