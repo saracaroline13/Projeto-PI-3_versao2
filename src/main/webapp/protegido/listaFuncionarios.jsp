@@ -12,7 +12,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <link href="css/style.css" rel="stylesheet">
+         <link href="css/style.css" rel="stylesheet">
+        
         <title>JSP Page</title>
         
         <script lang="text/javasript">
@@ -38,61 +39,86 @@
           }
                 
         </script>  
+        
+        
+        <style>
+            
+            h1{
+                color: green;
+            }
+            
+        </style>
+        
+        
+        
+        
+        
     </head>
     
     <body>
-        <header>
-            <a href="index.jsp">
-                <img src="imagens/slogan_sem_fundo_1.png" alt="Logo da Loja" />
-            </a>
-        </header>
+       
         
         <main class="container">
             <h1>Lista de Funcionarios</h1>
-            <table id="tbFuncionarios" class="table">
-                <thead class="thead-light">
-                    <th scope="col">Matricula</th>
-                    <th scope="col">Filial</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Cpf</th>
-                    <th scope="col">Sexo</th>
-                    <th scope="col">Data_Nasc</th>
-                    <th scope="col">Estado_Civil</th>
-                    <th scope="col">Cargo</th>
-                    <th scope="col">Salario</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Contato</th>
-                    <th scope="col">Rua</th>
-                    <th scope="col">Bairro</th>
-                    <th scope="col">Cep</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </thead>
-                <tbody>
-                    <c:forEach var="funcionario" items="${listaFuncionarios}">
-                        <tr>
-                            <td>${funcionario.id}</td> 
-                            <td>${funcionario.filial}</td> 
-                            <td>${funcionario.nome}</td>
-                            <td>${funcionario.cpf}</td> 
-                            <td>${funcionario.sexo}</td> 
-                            <td>${funcionario.data_nasc}</td> 
-                            <td>${funcionario.estado_civil}</td> 
-                            <td>${funcionario.cargo}</td> 
-                            <td>${funcionario.salario}</td> 
-                            <td>${funcionario.email}</td> 
-                            <td>${funcionario.contato}</td> 
-                            <td>${funcionario.rua}</td> 
-                            <td>${funcionario.bairro}</td> 
-                            <td>${funcionario.cep}</td> 
-                            <td>${funcionario.cidade}</td> 
-                            <td><a href="AlterarFuncionario?id=${funcionario.id}">Alterar</a></td> 
-                            <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${funcionario.id},' ${funcionario.nome}')">Excluir</button></td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+          
+            </br>
+             </br>
+             
+             
+             <div style="overflow-x:auto;">
+
+                 <table id="tbFuncionarios" class="table table-striped">
+                     <thead class="thead-light">
+
+                     <th scope="col">Matricula</th>
+                     <th scope="col">Filial</th>
+                     <th scope="col">Nome</th>
+                     <th scope="col">CPF</th>
+                     <th scope="col">Sexo</th>
+
+
+                     <th scope="col">Data_Nasc</th>
+                     <th scope="col">Estado_Civil</th>
+                     <th scope="col">Cargo</th>
+                     <th scope="col">Salario</th>
+                     <th scope="col">Email</th>
+
+
+                     <th scope="col">Contato</th>
+                     <th scope="col">Rua</th>
+                     <th scope="col">Bairro</th>
+                     <th scope="col">CEP</th>
+                     <th scope="col">Cidade</th>
+
+                     <th scope="col"></th>
+                     <th scope="col"></th>
+                     </thead>
+                     <tbody>
+                         <c:forEach var="funcionario" items="${listaFuncionarios}">
+                             <tr>
+                                 <td>${funcionario.id}</td> 
+                                 <td>${funcionario.filial}</td> 
+                                 <td>${funcionario.nome}</td>
+                                 <td>${funcionario.cpf}</td> 
+                                 <td>${funcionario.sexo}</td> 
+                                 <td>${funcionario.data_nasc}</td> 
+                                 <td>${funcionario.estado_civil}</td> 
+                                 <td>${funcionario.cargo}</td> 
+                                 <td>${funcionario.salario}</td> 
+                                 <td>${funcionario.email}</td> 
+                                 <td>${funcionario.contato}</td> 
+                                 <td>${funcionario.rua}</td> 
+                                 <td>${funcionario.bairro}</td> 
+                                 <td>${funcionario.cep}</td> 
+                                 <td>${funcionario.cidade}</td>
+                                 
+                                 <td><a href="AlterarFuncionario?id=${funcionario.id}"><button class="btn btn-primary">Alterar</button></a></td> 
+                                 <td><button type="button" class="btn btn-primary" onclick="mostrarModalExclusao(${funcionario.id},' ${funcionario.nome}')">Excluir</button></td>
+                             </tr>
+                         </c:forEach>
+                     </tbody>
+                 </table>
+             </div>
             
             <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -122,4 +148,5 @@
             © 2020 SEXTETO SECRETO, TODOS OS DIREITOS RESERVADOS
         </footer>
     </body>
+    
 </html>

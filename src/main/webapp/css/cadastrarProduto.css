@@ -1,0 +1,201 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03/12/2020, 22:17:19
+    Author     : Sara
+*/
+
+body {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    background: url(../imagens/chutando-a-bola.jpg) no-repeat bottom center scroll;
+    background-position: 30% 20%;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+h1 {
+    color: white;
+    font-family: Courier New, monospace;
+    font-size:53px;
+}
+
+
+
+#produto {
+    position: absolute; 
+    right: 820px;
+    width:350px;
+    top: 180px;
+    border-color: green;
+    opacity: 0.6;
+  
+}
+
+#categoria{
+    position: absolute; 
+    height: 37px;
+    right: 500px;
+    width:250px;
+    top: 180px;
+    border-color: green;
+    opacity: 0.6;
+   
+}
+
+#tamanho {
+    position: absolute; 
+    right: 230px;
+    width:200px;
+    top: 180px;
+    border-color: green;
+    opacity: 0.6;
+    
+}
+
+#preco {
+    position: absolute; 
+    right: 820px;
+    width:350px;
+    top: 300px;
+    border-color: green;
+    opacity: 0.6;
+  
+}
+
+#filial {
+    position: absolute; 
+    height: 37px;
+    right: 500px;
+    width:250px;
+    top: 300px;
+    border-color: green;
+    opacity: 0.6;
+    
+}
+
+#quantidade {
+    position: absolute; 
+    right: 230px;
+    width:200px;
+    top: 300px;
+    border-color: green;
+    opacity: 0.6;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#titulo-nome {
+    position: absolute; 
+    right: 1008px;
+    top: 145px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-categoria {
+    position: absolute; 
+    right: 535px;
+    top: 145px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-tamanho {
+    position: absolute; 
+    right: 355px;
+    top: 145px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-preco {
+    position: absolute; 
+    right: 1115px;
+    top: 265px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-filial {
+    position: absolute; 
+    right: 685px;
+    top: 265px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-quantidade {
+    position: absolute; 
+    right: 320px;
+    top: 265px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+.btn-primary {
+    position: absolute;
+    top: 450px;
+    right: 680px;
+    width:130px;
+    height: 60px;
+    background-color: green;
+    border-color: white;
+}
+
+.btn-secondary {
+    position: absolute;
+    top: 450px;
+    right: 540px;
+    width:130px;
+    height: 60px;
+    border-color: white;
+}
+
+.btn-primary:hover {
+	background-color: darkgreen;
+        border-color: gray;
+	}
+
+footer {
+    position: absolute; 
+    top: 600px;
+    right: 430px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    color: white;
+}

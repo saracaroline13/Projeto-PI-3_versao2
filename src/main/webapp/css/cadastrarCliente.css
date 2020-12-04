@@ -1,0 +1,244 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03/12/2020, 20:12:38
+    Author     : Sara
+*/
+
+* {
+  padding:0;
+  margin:0;
+}
+
+body {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    background: url(../imagens/chutando-a-bola.jpg) no-repeat bottom center scroll;
+    background-position: 30% 45%;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+h1 {
+    color: white;
+    font-family: Courier New, monospace;
+    font-size:53px;
+}
+
+
+#nome {
+  position: absolute; 
+  width:450px;
+  top: 140px;
+  right: 750px;
+  border-color: green;
+  opacity: 0.6;
+}
+
+#cpf {
+    position: absolute; 
+    width:250px;
+    top: 140px;
+    right: 450px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+#sex {
+    position: absolute;
+    width:200px;
+    height: 37px;
+    top: 140px;
+    right: 200px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+#email {
+    position: absolute; 
+    width:450px;
+    top: 260px;
+    right: 750px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+#telefone {
+    position: absolute; 
+    width:250px;
+    top: 260px;
+    right: 450px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+#cidade {
+    position: absolute; 
+    width:200px;
+    top: 260px;
+    right: 200px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+#rua {
+    position: absolute; 
+    width:450px;
+    top: 380px;
+    right: 750px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+#bairro {
+    position: absolute; 
+    width:250px;
+    top: 380px;
+    right: 450px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+#cep {
+    position: absolute; 
+    width:200px;
+    top: 380px;
+    right: 200px;
+    border-color: green;
+    opacity: 0.6;
+}
+
+
+
+
+
+#titulo-nome {
+    position: absolute;
+    right: 1158px;
+    top: 100px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-cpf {
+    position: absolute;
+    right: 668px;
+    top: 100px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-sexo {
+    position: absolute;
+    right: 358px;
+    top: 100px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-email {
+    position: absolute;
+    right: 1138px;
+    top: 215px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-telefone {
+    position: absolute;
+    right: 628px;
+    top: 215px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-rua {
+    position: absolute;
+    right: 1165px;
+    top: 338px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-bairro {
+    position: absolute;
+    right: 638px;
+    top: 338px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-cep {
+    position: absolute;
+    right: 368px;
+    top: 338px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+#titulo-cidade {
+    position: absolute;
+    right: 338px;
+    top: 215px;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+    font-size:18px;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    right: 440px;
+    top: 620px;
+    color: white;
+    font-family: Courier New, monospace;
+    font-weight: lighter;
+}
+
+.btn-primary {
+    position: absolute;
+    top: 495px;
+    right: 680px;
+    width:130px;
+    height: 60px;
+    background-color: green;
+    border-color: white;
+}
+
+.btn-secondary {
+    position: absolute;
+    top: 495px;
+    right: 540px;
+    width:130px;
+    height: 60px;
+    border-color: white;
+}
+
+.btn-primary:hover {
+	background-color: darkgreen;
+        border-color: gray;
+	}
